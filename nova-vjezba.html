@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nova vježba</title>
+    <style>
+
+        body {padding: 5%; font-size: larger; text-align: center; background-color: darksalmon;}
+        .main {border: 1cap;  max-width: 800px; margin-left: auto; margin-right: auto; height: 400px; min-width: 600px;
+               position: relative; background-color: aliceblue;}
+
+        .prvi {border: 1cap;  background-color: red; position: absolute; top: 0%; left: 0%; width: 100px; height: 100px;
+               }
+        .drugi {border: 1cap;  background-color: green; position: absolute; top: 0%; right: 0%; width: 100px; height: 100px;
+               }
+        .treci {border: 1cap;  background-color: blue; position: absolute; bottom: 0%; right: 0%; width: 100px; height: 100px;
+               }
+        .cetvrti {border: 1cap;  background-color: yellow; position: absolute; bottom: 0%; left: 0%; width: 100px; height: 100px;
+               }
+
+               .prvi:hover {position: absolute; top: 0%; left: calc(100% - 100px); z-index: 3;}
+               .drugi:hover {position: absolute; top: 0%; top: calc(100% - 100px); z-index: 2;}
+               .treci:hover {position: absolute; bottom:0%; right: calc(100% - 100px); z-index: 1;}
+               .cetvrti:hover {position: absolute; bottom: 0%; bottom: calc(100% - 100px)}
+
+        
+        /*--USPJELA SAM! p.s. METODOM POKUŠAJA I POGREŠAKA :-)--*/
+
+
+    </style>
+
+</head>
+
+<body>
+
+    <div class="main">
+        <div class="prvi">1</div>
+        <div class="drugi">2</div>
+        <div class="treci">3</div>
+        <div class="cetvrti">4</div>
+    </div>
+    
+</body>
+</html>
