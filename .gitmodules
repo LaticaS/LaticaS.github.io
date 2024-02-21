@@ -1,0 +1,3 @@
+[submodule "testni-repo"]
+	path = testni-repo
+	url = https://github.com/LaticaS/testni-repo.git
