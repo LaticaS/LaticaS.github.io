@@ -1,3 +1,6 @@
 [submodule "testni-repo"]
 	path = testni-repo
 	url = https://github.com/LaticaS/testni-repo.git
+[submodule "izrada-web-stranice-web-shop-v2-LaticaS"]
+	path = izrada-web-stranice-web-shop-v2-LaticaS
+	url = https://github.com/LaticaS/izrada-web-stranice-web-shop-v2-LaticaS.git
