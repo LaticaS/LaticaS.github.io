@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drugi zad</title>
+</head>
+<body>
+    <p id="demo"></p>
+
+    <script>
+        /*--Rad s nizovima:
+·       Kreirajte niz [] koji sadrži nekoliko imena.
+·       Napišite funkciju koja prolazi kroz niz i ispisuje svako ime u konzoli.
+·       Napišite funkciju koja prolazi kroz niz i ispisuje broj člana niza + ime u html dokumentu
+        --*/
+
+        let imena=["Ante", "Mate", "Stipe", "Ana"];        
+
+        function ispisiImena() {
+            for (let i=0; i<imena.length; i++) {
+                document.getElementById("demo").innerHTML+= i + " " + imena[i] + "<br>";
+                //i ispisuje indexs, a imena[i] imena
+                console.log(imena[i])  
+            }
+        }
+        ispisiImena()        
+    </script>    
+</body>
+</html>

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kviz2 uz pomoć objekta</title>
+    <style>
+        body {background-image: url(./images/oscars-1.webp);
+            background-size: contain; font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;}
+
+        #kviz-container {width: 100%;}
+        h1 {color:bisque; text-align: center;}
+        #kviz-container1, #kviz-container2, #kviz-container3 {background-color: bisque; opacity: 95%; width: 400px;
+        position: relative; left: 35%; display: flex; flex-direction: column; justify-content: space-between; align-items: center;
+        border-radius: 5px; padding: 1rem;}
+        h2 {color: brown; font-size: 1.3rem; line-height: 1.5rem;}        
+
+        #odgovor1, #odgovor2, #odgovor3, #odgovor4, 
+        #odgovor2-1, #odgovor2-2, #odgovor2-3, #odgovor2-4,
+        #odgovor3-1, #odgovor3-2, #odgovor3-3, #odgovor3-4     
+        {width: 80%; height: 40px;
+            background-color: goldenrod; opacity: 100%; margin: 0.5rem; border-radius: 5px;
+            text-align: center; font-size: 1.1rem; font-weight: bold; padding-top: 1rem;}
+            #odgovor1:hover, #odgovor2:hover, #odgovor3:hover, #odgovor4:hover,
+            #odgovor2-1:hover, #odgovor2-2:hover, #odgovor2-3:hover, #odgovor2-4:hover,
+            #odgovor3-1:hover, #odgovor3-2:hover, #odgovor3-3:hover, #odgovor3-4:hover
+             {border: 1px solid dimgrey;
+                background-color: gold;}
+   
+        #rezultat1, #rezultat2, #rezultat3, #brojTocnihOdgovora {color: bisque; position: relative; left: 35%;            
+            font-weight: bold; font-size: larger;}
+        #brojTocnihOdgovora {width: 220px; background-color: bisque; padding: 0.3rem;
+                border-radius: 5px; color:brown;
+                position: sticky; bottom: 0%; left: 0%;           
+            font-weight: bold; font-size: 1rem;}
+
+            @media screen and (max-width: 550px) {
+                #kviz-container1, #kviz-container2, #kviz-container3, div {width: 98%; left: 0%; margin: 0.2rem; padding: 0.5rem;}
+                #rezultat1, #rezultat2, #rezultat3, #brojTocnihOdgovora {left: 0%}
+
+         }
+    </style>
+</head>
+<body>
+    <h1>USUSRET OSCARIMA - KVIZ</h1>
+
+    <div id="kviz-container1">
+        <h2 id="pitanje"></h2>
+        <div onclick="provjeriOdgovor1(1)" id="odgovor1"></div>
+        <div onclick="provjeriOdgovor1(2)" id="odgovor2"></div>
+        <div onclick="provjeriOdgovor1(3)" id="odgovor3"></div>
+        <div onclick="provjeriOdgovor1(4)" id="odgovor4"></div>
+    </div>
+
+    <p id="rezultat1">ODGOVOR JE: </p> 
+
+    <div id="kviz-container2">
+        <h2 id="pitanje2"></h2>
+        <div onclick="provjeriOdgovor2(1)" id="odgovor2-1"></div>
+        <div onclick="provjeriOdgovor2(2)" id="odgovor2-2"></div>
+        <div onclick="provjeriOdgovor2(3)" id="odgovor2-3"></div>
+        <div onclick="provjeriOdgovor2(4)" id="odgovor2-4"></div>
+    </div>
+
+    <p id="rezultat2">ODGOVOR JE: </p>
+
+    <div id="kviz-container3">
+        <h2 id="pitanje3"></h2>
+        <div onclick="provjeriOdgovor3(1)" id="odgovor3-1"></div>
+        <div onclick="provjeriOdgovor3(2)" id="odgovor3-2"></div>
+        <div onclick="provjeriOdgovor3(3)" id="odgovor3-3"></div>
+        <div onclick="provjeriOdgovor3(4)" id="odgovor3-4"></div>
+    </div>
+
+    <p id="rezultat3">ODGOVOR JE: </p>
+    <hr>
+    <div id="brojTocnihOdgovora">BROJ TOČNIH ODGOVORA: 0</div>
+    
+    
+    <script>
+                //uz pomoć OBJEKTA
+    var brojTocnihOdgovora = 0; // Dodana globalna varijabla za praćenje broja točnih odgovora            
+    var prvoPitanje = {
+        pitanjeTekst: "1. Koji je od ovih filmova osvojio najviše Oscara?",
+        odgovor1: "Avatar",
+        odgovor2: "Braveheart",
+        odgovor3: "Titanic",
+        odgovor4: "Engleski pacijent",
+        tocanOdgovor: 3,        
+    };
+    
+    // Postavljanje elemenata na temelju objekta prvoPitanje
+    document.getElementById("pitanje").innerText = prvoPitanje.pitanjeTekst;
+    document.getElementById("odgovor1").innerText = prvoPitanje.odgovor1;
+    document.getElementById("odgovor2").innerText = prvoPitanje.odgovor2;
+    document.getElementById("odgovor3").innerText = prvoPitanje.odgovor3;
+    document.getElementById("odgovor4").innerText = prvoPitanje.odgovor4;
+    
+    // Funkcija za provjeru odgovora
+    function provjeriOdgovor1(odgovor) {
+        if (odgovor === prvoPitanje.tocanOdgovor) {
+            document.getElementById("rezultat1").innerHTML="ODGOVOR JE: TOČAN";
+            brojTocnihOdgovora++; // Povećaj broj točnih odgovora
+        } else {
+            document.getElementById("rezultat1").innerHTML="ODGOVOR JE: NETOČAN";
+        }
+        prikaziBrojTocnihOdgovora(); // Prikazi broj točnih odgovora
+    } ;
+
+                        /*-- PITANJE 2 --*/
+    var drugoPitanje = {
+        pitanjeTekst: "2. Koji je redatelj snimio najpoznatiju mafijašku trilogiju?",
+        odgovor1: "James Cameron",
+        odgovor2: "Ridley Scott",
+        odgovor3: "Martin Scorsese",
+        odgovor4: "F.F.Coppola",
+        tocanOdgovor: 4,       
+    };
+    
+    // Postavljanje elemenata na temelju objekta prvoPitanje
+    document.getElementById("pitanje2").innerText = drugoPitanje.pitanjeTekst;
+    document.getElementById("odgovor2-1").innerText = drugoPitanje.odgovor1;
+    document.getElementById("odgovor2-2").innerText = drugoPitanje.odgovor2;
+    document.getElementById("odgovor2-3").innerText = drugoPitanje.odgovor3;
+    document.getElementById("odgovor2-4").innerText = drugoPitanje.odgovor4;
+    
+    // Funkcija za provjeru odgovora
+    function provjeriOdgovor2(odgovor) {
+        if (odgovor === drugoPitanje.tocanOdgovor) {
+            document.getElementById("rezultat2").innerHTML="ODGOVOR JE: TOČAN";
+            brojTocnihOdgovora++;
+        } else {
+            document.getElementById("rezultat2").innerHTML="ODGOVOR JE: NETOČAN";
+        }
+        prikaziBrojTocnihOdgovora(); // Prikazi broj točnih odgovora
+    };
+    
+                      /*-- PITANJE 3 --*/
+
+    var trecePitanje = {
+        pitanjeTekst: "3. Koja je glumačka veličina osvojila najviše Oscara za svoje uloge?",
+        odgovor1: "Jack Nicholson",
+        odgovor2: "Katharine Hepburn",
+        odgovor3: "James Stewart",
+        odgovor4: "Meryl Streep",
+        tocanOdgovor: 2,       
+    };
+    
+    // Postavljanje elemenata na temelju objekta prvoPitanje
+    document.getElementById("pitanje3").innerText = trecePitanje.pitanjeTekst;
+    document.getElementById("odgovor3-1").innerText = trecePitanje.odgovor1;
+    document.getElementById("odgovor3-2").innerText = trecePitanje.odgovor2;
+    document.getElementById("odgovor3-3").innerText = trecePitanje.odgovor3;
+    document.getElementById("odgovor3-4").innerText = trecePitanje.odgovor4;
+    
+    // Funkcija za provjeru odgovora
+    function provjeriOdgovor3(odgovor) {
+        if (odgovor === trecePitanje.tocanOdgovor) {
+            document.getElementById("rezultat3").innerHTML="ODGOVOR JE: TOČAN";
+            brojTocnihOdgovora++;
+        } else {
+            document.getElementById("rezultat3").innerHTML="ODGOVOR JE: NETOČAN";
+        }
+        prikaziBrojTocnihOdgovora(); // Prikazi broj točnih odgovora
+    };
+    
+    // Funkcija za prikazivanje broja točnih odgovora
+    function prikaziBrojTocnihOdgovora() {
+    document.getElementById("brojTocnihOdgovora").innerHTML="BROJ TOČNIH ODGOVORA: " + brojTocnihOdgovora;
+}
+    </script>  
+</body>
+</html>

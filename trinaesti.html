@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator</title>
+    <style>
+        body {background-color: darkolivegreen;}
+
+        .kalkulator-tijelo{width: 400px; height: 450px; background-color: white; color: darkred;
+            text-align: center; font-family:Arial, Helvetica, sans-serif; font-weight: bold;
+            padding: 1rem; border: 3px solid goldenrod; border-radius: 5px; position: relative; top: 0%; left: 30%; 
+            display: flex; flex-wrap: wrap; justify-content: center;}
+        input {width: 100%; height: 10%; border: 2px solid darkolivegreen; border-radius: 5px;
+        font-size: large;}
+
+        .operacije {width: 100%; height: 30%; display: flex; flex-wrap: wrap; flex: 1 1 auto; justify-content: space-around;
+        background-color: white; position: relative;}
+        #plus, #minus, #puta, #dijeli {width: 24%; height: 70%; background-color: lightgrey;
+            font-size: 150%; font-weight: bold; position: relative; border-radius: 5px; }
+            #refresh { width: 100%; height: 24%; background-color: lightgrey;
+            font-size: 150%; font-weight: bold; position: relative; border-radius: 5px; margin-top: 10px;} 
+        #plus:hover, #minus:hover, #puta:hover, #dijeli:hover, #refresh:hover {border: 1px solid grey; padding: 0.5px;}
+        span {position: absolute; transform: translate(-50%, -50%); top: 50%; left: 50%; } 
+
+        #div-rezultat {width: 100%; height: 20%; background-color: whitesmoke;
+            border: 2px solid darkolivegreen; border-radius: 5px; font-size: 150%;} 
+            img {width: 30px; height: 30px;}
+    </style>
+</head>
+
+<body>
+    <div class="kalkulator-tijelo">
+        <label for="input">Unesite prvi broj</label>
+        <input type="text" id="input-prvi" name="broj1" placeholder="unesite broj">
+        <label for="input">Unesite drugi broj</label>
+        <input type="text" id="input-drugi" name="broj2" placeholder="unesite broj">
+        <div class="operacije">
+        <div id="plus" onclick="zbrojiBrojeve()"><span><img src="./images/add-svgrepo-com.svg" alt="plus"></span></div>
+        <div id="minus" onclick="oduzmiBrojeve()"><span><img src="./images/minus-svgrepo-com.svg" alt="minus"></span></div>
+        <div id="puta" onclick="pomnoziBrojeve()"><span><img src="./images/x-svgrepo-com.svg" alt="množenje"></span></div>
+        <div id="dijeli" onclick="podijeliBrojeve()"><span><img src="./images/divide-line-svgrepo-com.svg" alt="dijeljenje"></span></div>
+        <div id="refresh" onclick="resetirajKalkulator()">AC</div>
+        </div>
+        <p>Rezultat</p>
+        <div id="div-rezultat">
+            <p id="p-rezultat"></p>
+        </div>                
+    </div>
+
+    <script>
+        /*--kalkulator: razviti jednostavni kalkulator koji omogućava
+        korisniku da unese 2 broja i odabere operaciju (zbrajanje, oduzimanje,
+        množenje, dijeljenje). Na temelju odabrane operacije prikazati rezultat.
+        --*/
+        
+        function zbrojiBrojeve(a, b) { return a + b; };         
+        
+        function zbrojiBrojeve() {
+        let prviInput = document.getElementById("input-prvi");
+        let drugiInput = document.getElementById("input-drugi");
+        
+        // Dobivanje vrijednosti iz inputa unutar funkcije
+        let prviBroj = +prviInput.value;
+        let drugiBroj = +drugiInput.value;
+
+        console.log(prviBroj + " & " + drugiBroj);
+
+        let zbroj = prviBroj + drugiBroj; 
+        console.log(zbroj);
+        document.getElementById("p-rezultat").innerHTML = zbroj;
+    }
+    //---
+
+    function oduzmiBrojeve(a, b) { return a - b; };         
+        
+        function oduzmiBrojeve() {
+        let prviInput = document.getElementById("input-prvi");
+        let drugiInput = document.getElementById("input-drugi");
+        
+        // Dobivanje vrijednosti iz inputa unutar funkcije
+        let prviBroj = +prviInput.value;
+        let drugiBroj = +drugiInput.value;
+
+        console.log(prviBroj + " & " + drugiBroj);
+
+        let oduzetak = prviBroj - drugiBroj; 
+        console.log(oduzetak);
+        document.getElementById("p-rezultat").innerHTML = oduzetak;
+    }
+
+    function pomnoziBrojeve(a, b) { return a * b; };         
+        
+        function pomnoziBrojeve() {
+        let prviInput = document.getElementById("input-prvi");
+        let drugiInput = document.getElementById("input-drugi");
+        
+        // Dobivanje vrijednosti iz inputa unutar funkcije
+        let prviBroj = +prviInput.value;
+        let drugiBroj = +drugiInput.value;
+
+        console.log(prviBroj + " & " + drugiBroj);
+
+        let umnozak = prviBroj * drugiBroj; 
+        console.log(umnozak);
+        document.getElementById("p-rezultat").innerHTML = umnozak;
+    }
+
+    function podijeliBrojeve(a, b) { return a / b; };         
+        
+        function podijeliBrojeve() {
+        let prviInput = document.getElementById("input-prvi");
+        let drugiInput = document.getElementById("input-drugi");
+        
+        // Dobivanje vrijednosti iz inputa unutar funkcije
+        let prviBroj = +prviInput.value;
+        let drugiBroj = +drugiInput.value;
+
+        console.log(prviBroj + " & " + drugiBroj);
+
+        let dijeljenik = prviBroj / drugiBroj; 
+        console.log(dijeljenik);
+        document.getElementById("p-rezultat").innerHTML = dijeljenik;
+    }
+
+    function resetirajKalkulator() {
+        // Funkcija za potpuno resetiranje kalkulatora
+        document.getElementById("input-prvi").value = "";
+        document.getElementById("input-drugi").value = "";
+        document.getElementById("p-rezultat").innerHTML = "";
+    }
+    </script>
+</body>
+</html>

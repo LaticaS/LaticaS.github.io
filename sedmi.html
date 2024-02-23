@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sedmi - string, veliko slovo</title>
+</head>
+<body>
+
+    <script>
+        /*--napraviti funkciju koja uzima string kao argument i vraća isti string,
+        ali s prvim slovom svake riječi pretvorenim u veliko slovo--*/
+        
+        let nekiString="kokos ananas banana jogurt";
+        let result = nekiString.toUpperCase(); //u velika slova, ali ovo je cijeli string 
+        console.log(result)
+        //------------
+
+        function velikoSlovo(str) {
+            let stringSplit= str.split(" "); //razdvajanje riječi stringa
+
+            /*--sada izlistavanje riječi petljom, zatim odvajanje prvog slova sa .charAt()
+            -koji bira unos/znak na mjestu nekog indeksa- 
+            zatim veliko slovo + rezanje i dodavanje ostatka riječi--*/
+
+            for (let i=0; i<stringSplit.length; i++) {
+                console.log(stringSplit[i].charAt(0).toUpperCase() + stringSplit[i].slice(1))
+            }                                    
+        }
+        console.log(velikoSlovo(nekiString)); 
+        /*--
+        let rezultat = nekiString.toUpperCase();
+        console.log(rezultat) 
+        --*/   
+    </script>    
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Osmi - objekt</title>
+</head>
+<body>
+    <p id="demo"></p>
+    <script>        
+        /*--kreirati objekt koji predstavlja knjigu, sa svojstvima kao što su naslov, autor i godina izdanja,
+        napisati funkciju koja ispisuje sve informacije o knjizi
+        --*/
+        const knjiga = {
+            naslov: "Knjiga: -Kako preživjeti JS i ostati relativno nenormalan?-",
+            autor: "Autor: Latica Škubonja",
+            godina_izdanja: "Godina izdanja: 2024"}; 
+            //provjeri u konzoli 
+            console.log(knjiga.naslov + " " + knjiga.autor + " " + knjiga.godina_izdanja);
+            
+            //napravi funkciju
+            function dajInfo() {
+                return knjiga.naslov + "<br> " + knjiga.autor + "<br> " + knjiga.godina_izdanja;
+            } 
+                      
+            let sviPodaci=dajInfo(knjiga);
+            document.getElementById("demo").innerHTML=sviPodaci;
+            dajInfo()             
+    </script>    
+</body>
+</html>

@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vremenska prognoza</title>
+    <style>
+        body {background-color: white; background-image: url(./images/pexels-pixabay-209831.jpg);
+            background-size: cover; background-repeat: no-repeat;}
+        .glavni-container {width: 60%; height: 95vh; position: relative; left: 2%; 
+            background: linear-gradient(lightskyblue, darkslategrey)30%; border: 2px solid lightskyblue;
+            border-radius: 8%; display: flex; flex-wrap: wrap; align-items: center; 
+            color: white; font-family: Arial, Helvetica, sans-serif; padding: 0.5rem 1rem;}
+             h1 {width: 100%; font-size: 1.8rem;}
+        .div-lokacija {width: 100%; height: 20%; 
+                display: flex; flex-wrap: wrap; padding: 0.5rem; position: relative;}
+             #div-datum {width: 100%; padding-bottom: 0.5rem;}
+             .div-grad {width: 60%; padding-bottom: 0.5rem; margin-bottom: 0.5rem; font-size: larger;}
+             .div-search {width: 35%; float: right; border-radius: 5px; text-align: right;}
+             input {height: 5vh; width: 80%; border-radius: 10px; border: none; font-size: 1rem;                
+                padding: 5px 8px; outline: 1px solid darkslategrey;           
+            }
+            #myButton:hover {opacity: 50%; cursor: pointer;}  
+        .div-vrijeme {width: 100%; height: 45%; display: flex; flex-wrap: wrap; flex: 1 1 auto;
+            padding: 0.5rem; position: relative;}
+
+            .div-ikonica-vremena, .div-temperatura, .div-opis-vremena {width: 33%; height: 75%;
+                text-align: center; }
+            .div-temperatura span {font-size: 3rem;}
+            #slikica {width: 70%;}
+            .div-vrijeme span {position: absolute; top: 40%;}
+            .div-opis-vremena {font-size: 1.5rem;}
+            
+        .div-ostale-vrijednosti {width: 100%; height: 15%; display:flex; flex-wrap: wrap; flex: 1 1 auto;
+            text-align: center; margin-bottom: 1rem; position: relative;}
+            .div-vjetar, .div-vlaga, .div-tlak {width: 33%; height: 75%; text-align: center; font-size: 1.5rem; }
+            .div-ostale-vrijednosti span {position: absolute; top: 60%;}
+
+            @media screen and (max-width: 500px) {
+                .glavni-container {width: 98%; height:100%; position: relative; 
+                    padding: 0.5rem 0.2rem; margin: 0.5rem 0.2rem;
+                    display: flex; flex-direction: column;}
+                    .div-vrijeme {display: flex; flex-direction: column;} 
+                    .div-ostale-vrijednosti {display: flex; flex-direction: column;} 
+
+
+                .div-grad, .div-search, .div-ikonica-vremena,
+                .div-temperatura, .div-opis-vremena,
+                .div-vjetar, .div-vlaga, .div-tlak  {width: 100%; height: fit-content;
+                    padding: 0.5rem; float: left;}
+
+                .div-search {float: left; text-align: left;}
+                span {position: relative; bottom: 10%;}  
+
+        }
+        
+    </style>
+
+</head>
+
+<body>
+    <main>        
+        <div class="glavni-container">
+            <h1>Trenutno vrijeme</h1>            
+        <div class="div-lokacija">
+            <div id="div-datum">dan, datum: </div>
+
+            <div class="div-grad" ><span id="grad"></span></div>            
+            <div class="div-search">
+                <label for="cityInput" >
+                <input type="text" class="input-search" id="cityInput" placeholder="Upišite ime grada" name="search">  
+                <img src="./images/search.png" id="myButton" alt="ikonica traži" width="20px" height="20px">
+                </label>                                            
+            </div>
+        </div>
+
+        <div class="div-vrijeme">            
+           <div class="div-ikonica-vremena">
+                <img src="./images/weather-svgrepo-com.svg" alt="Vremenska slika" id="slikica">
+            </div> 
+            <div class="div-temperatura" style="margin-right: -3vh;">
+                <span id="temperatura">5°C</span>
+           </div>          
+            <div class="div-opis-vremena" style="margin-right: -3vh;">
+                <span id="opis">blaga naoblaka</span>
+            </div>
+
+        </div>
+
+            <div class="div-ostale-vrijednosti">
+                <div class="div-vjetar">                    
+                <img src="./images/wind.png" alt="ikonica vjetar" width="30px" height="30px" style="margin-right: -5vh;">
+                <span id="vjetar">vjetar: </span>
+                </div>
+                <div class="div-vlaga">
+                    <span id="vlaga">vlaga: </span>                    
+                    <img src="./images/humidity.png" alt="ikonica vlaga" width="30px" height="30px">
+                </div>
+                <div class="div-tlak">
+                    <span id="tlak">tlak: </span>                    
+                    <img src="./images/thermometer-svgrepo-com.svg" alt="ikonica vlaga" width="40px" height="40px">
+                </div> 
+            </div>
+
+        </div>
+    </main>
+
+    <script>
+        const d = new Date();
+        document.getElementById("div-datum").innerHTML = d;
+        </script>  
+
+        
+            <script>
+    function fetchWeather() {
+        var cityName = document.getElementById('cityInput').value;            
+        var apiKey = '2784033eeb9b6ebd43f745eefc05cbf1';
+        var lang = 'hr';
+
+        // Provjera je li unesen grad
+            if (cityName === "") {
+                alert("Molimo unesite naziv grada.");
+                return; // Prekida funkciju ako polje za unos grada ostavljeno prazno
+    }
+
+        fetch('https://api.openweathermap.org/data/2.5/weather?q=' + cityName + '&lang=' + lang + '&appid=' + apiKey)
+            .then(response => response.json())
+            .then(data => {
+                // Ovdje možete obraditi podatke koje ste dobili
+                console.log(data);
+                var temperatureKelvin = data.main.temp;
+                var temperatureCelsius = temperatureKelvin - 273.15; // Pretvorba Kelvin u Celzijevu skalu
+
+                var opisVremena = data.weather[0].description;
+                var brzinaVjetra = data.wind.speed * 3.6 ;
+                var vlaga = data.main.humidity;
+                var tlak = data.main.pressure;
+                var mjernaStanica = data.name;           
+
+                // Postavljanje temperature u element s id "temperatura"
+                document.getElementById('temperatura').textContent = temperatureCelsius.toFixed(1) + ' °C';
+                document.getElementById('opis').textContent = opisVremena;
+                document.getElementById("vjetar").textContent = "Vjetar: " + brzinaVjetra.toFixed(1) + "km/h";
+                document.getElementById("vlaga").textContent = "Vlaga: " + vlaga + "%";
+                document.getElementById("tlak").textContent = "Tlak: " + tlak + "hPa";
+
+                document.getElementById("grad").textContent = cityName + ", " + mjernaStanica; 
+
+                var vremenskiUvjeti = data.weather[0].main; 
+
+                var sunrise = new Date(data.sys.sunrise * 1000); // Pretvorba UNIX vremena izlaska sunca u JavaScript objekt Date
+                var sunset = new Date(data.sys.sunset * 1000); // Pretvorba UNIX vremena zalaska sunca u JavaScript objekt Date
+                var currentTime = new Date();               
+
+                switch (vremenskiUvjeti) {
+                    case "Clear":
+                    document.getElementById('slikica').src = "./images/clear.png";                    
+                        break;
+
+                    case "Rain":
+                        document.getElementById('slikica').src = "./images/rainy-3.svg";                        
+                        break;
+
+                    case "Snow":
+                        document.getElementById('slikica').src = "./images/snow.png";
+                        break;
+
+                    case "Clouds":
+                        document.getElementById('slikica').src = "./images/clouds.png";
+                        break;
+
+                    case "Mist":
+                        document.getElementById('slikica').src = "./images/mist.png";
+                        break;
+
+                    case "Fog":
+                        document.getElementById('slikica').src = "./images/fog.svg";
+                        break;
+
+                    case "Haze":
+                        document.getElementById('slikica').src = "./images/mist.png";
+                        break;
+
+                    case "Drizzle":
+                        document.getElementById('slikica').src = "./images/drizzle.png";
+                        break;
+
+                    case "Thunderstorm":
+                        document.getElementById('slikica').src = "./images/isolated-thunderstorms.svg";
+                        break;
+
+                    default:
+                        document.getElementById('slikica').src = "./images/weather-svgrepo.com.svg";
+                        document.body.style.backgroundImage = "url('./images/pexels-pixabay-209831.jpg')";
+                        //sa ovim dijelom koda možemo mijenjati i background-image za body!!
+                        break
+                }  
+
+                 // Provjera trenutnog doba dana
+                 if (currentTime > sunrise && currentTime < sunset) {
+                    // Dan
+                    document.body.style.backgroundImage = "url('./images/pexels-pixabay-209831.jpg')";
+                } else {
+                    // Noć
+                    document.body.style.backgroundImage = "url('./images/noc-mjesec.jpg')";
+                }
+            })
+                
+            
+            .catch(error => {
+                console.error('Error fetching weather data:', error);
+            });
+    }
+
+    document.getElementById('myButton').addEventListener('click', fetchWeather);
+
+    document.getElementById('cityInput').addEventListener('keydown', function(event) {
+        if (event.keyCode === 13) { // 13 corresponds to the Enter key
+            fetchWeather();
+        }
+    });
+</script>        
+
+
+<!--
+    <script>
+        document.getElementById('myButton').addEventListener('click', function() {
+            var cityName = document.getElementById('cityInput').value;            
+            var apiKey = '2784033eeb9b6ebd43f745eefc05cbf1';
+
+    fetch('https://api.openweathermap.org/data/2.5/weather?q=' + cityName + '&appid=' + apiKey)
+        .then(response => response.json())
+        .then(data => {
+            // Ovdje možete obraditi podatke koje ste dobili
+            console.log(data);
+            var temperatureKelvin = data.main.temp;
+            var temperatureCelsius = temperatureKelvin - 273.15; // Pretvorba Kelvin u Celzijevu skalu
+     
+            var opisVremena = data.weather[0].main;
+            var brzinaVjetra = data.wind.speed;
+            var vlaga = data.main.humidity;
+            var tlak = data.main.pressure;
+            var mjernaStanica = data.name;           
+            
+
+            // Postavljanje temperature u element s id "temperatura"
+            document.getElementById('temperatura').textContent = temperatureCelsius.toFixed(1) + ' °C';
+            document.getElementById('opis').textContent = opisVremena;
+            document.getElementById("vjetar").textContent = "Vjetar: " + brzinaVjetra + "m/s";
+            document.getElementById("vlaga").textContent = "Vlaga: " + vlaga + "%";
+            document.getElementById("tlak").textContent = "Tlak: " + tlak + "hPa";
+
+            document.getElementById("grad").textContent = cityName + ", " + mjernaStanica; 
+            
+
+            var vremenskiUvjeti = data.weather[0].main;          
+
+            switch (vremenskiUvjeti) {
+                    case "Clear":
+                    document.getElementById('slikica').src = "./images/clear.png";
+                    break;
+
+                    case "Rain":
+                    document.getElementById('slikica').src = "./images/rainy-3.svg";
+                    break;
+
+                    case "Snow":
+                    document.getElementById('slikica').src = "./images/snow.png";
+                    break;
+
+                    case "Clouds":
+                    document.getElementById('slikica').src = "./images/clouds.png";
+                    break;
+
+                    case "Mist":
+                    document.getElementById('slikica').src = "./images/fog-day.svg";
+                    break;
+
+                    case "Fog":
+                    document.getElementById('slikica').src = "./images/fog.svg";
+                    break;
+
+                    case "Haze":
+                    document.getElementById('slikica').src = "./images/mist.png";
+                    break;
+
+                    case "Drizzle":
+                    document.getElementById('slikica').src = "./images/drizzle.png";
+                    break;
+
+                    case "Thunderstorm":
+                    document.getElementById('slikica').src = "./images/isolated-thunderstorms.svg";
+                    break;
+
+                    default:
+                    document.getElementById('slikica').src = "./images/weather-svgrepo.com.svg";
+                        break
+                    }  
+            
+        })
+        .catch(error => {
+            console.error('Error fetching weather data:', error);
+        });
+});
+    </script>
+
+-->
+
+
+
+    <!--
+
+    <script>
+        // Primjer kada se API poziva nakon klika na gumb
+document.getElementById('myButton').addEventListener('click', function() {
+    var latitude = "43.72722";
+    var longitude = "15.90583";
+    var apiKey = '2784033eeb9b6ebd43f745eefc05cbf1';
+
+    fetch('https://api.openweathermap.org/data/2.5/weather?lat=' + latitude + '&lon=' + longitude + '&appid=' + apiKey)
+        .then(response => response.json())
+        .then(data => {
+
+
+            // Ovdje možete obraditi podatke koje ste dobili
+            console.log(data);
+        })
+        .catch(error => {
+            console.error('Error fetching weather data:', error);
+        });
+});
+    </script>
+
+    -->
+    
+    <!--
+
+    <script>
+        const container = document.querySelector(".glavni-container");
+        const search = document.querySelector(".div-search img");
+        const weatherBox = document.querySelector(".div-lokacija");
+        const weatherBox2 = document.querySelector(".div-vrijeme");    
+        const weatherDetails = document.querySelector(".div-ostale vrijednosti");
+
+        search.addEventListener("click", () => {
+            const APIKey = 'b143735409d4953d34834a63e8a11c93';
+            const city = document.querySelector(".div-search input").value;
+
+            if (city == "") 
+            return;
+
+            fetch('https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${APIKey}&lang{hr}').then(response => response.json()).then(json => {
+                
+                const image = document.querySelector(".div-ikonica-vremena img");
+                const temperature = document.querySelector(".div-temperatura span");
+                const description = document.querySelector(".div-opis-vremena span");
+
+                const wind = document.querySelector(".div-vjetar span");
+                const humidity = document.querySelector(".div-vlaga span");
+                const pressure = document.querySelector(".div-tlak span");
+
+                switch (json.weather[0].main) {
+                    case "Clear":
+                        image.src = "./images/clear.png";
+                    break;
+
+                    case "Rain":
+                        image.src = "./images/rain.png";
+                    break;
+
+                    case "Snow":
+                        image.src = "./images/snow.png";
+                    break;
+
+                    case "Clouds":
+                        image.src = "./images/clouds.png";
+                    break;
+
+                    case "Mist":
+                        image.src = "./images/mist.png";
+                    break;
+
+                    case "Haze":
+                        image.src = "./images/mist.png";
+                    break;
+
+                    default:
+                        image.src = "./images/weather-svgrepo.com.svg";
+                }
+
+                temperature.innerHTML = `${parseInt(json.main.temp)}<span> °C</span>`;
+                description.innerHTML = `${json.weather[0].description}`;
+                humidity.innerHTML = `${json.main.humidity}%`;
+                wind.innerHTML = `${parseInt(json.wind.speed)}<span> km/h</span>`;
+                pressure.innerHTML = `${parseInt(json.pressure)}<span> kPa</span>`;
+
+
+            });
+
+        });
+    </script>
+    -->
+</body>
+</html>

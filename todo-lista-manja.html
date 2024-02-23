@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @font-face {
+            font-family: Aller;
+            src: url(./font/Aller_BdIt.ttf);
+        }
+        body {background-color:white; 
+            background-image: url(./images/coffee-background-hxef0dviodi4wxj1.jpg); background-repeat: repeat; background-size:100%;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }        
+        h2, h3 {font-family: Aller;}        
+        main {display: flex; flex-wrap: wrap; width: 80%; }
+        #div-todo {width: 100%; display: flex; flex-wrap: wrap;
+            margin: 0.5rem; padding: 1rem 0.5rem; border-radius: 5px; }        
+        #div-todo {background-color: gold;}    
+        table {width: 100%;}
+        tr, th {width:100%; height: 5vh; margin: 1.5rem 0rem;
+            padding-left: 1rem; background-color: whitesmoke; border-radius: 10px;}            
+        td {border-top: 1px solid black; height: 5vh; margin: 1.5rem 0rem; padding: 0.5rem 0.3rem;}
+        td:hover {border-bottom: 1px solid black;} 
+        #not-editable {width: 5%; border-top-left-radius: 10px; border-bottom-left-radius: 10px; border-left: 1px solid black;}
+        #editable {max-width: 14rem; border-right: 1px solid black; border-top-right-radius: 10px; border-bottom-right-radius: 10px;}
+        #td-futer {border: 1px solid black; border-radius: 10px; background-color:lightgrey;}
+        #td-futer:hover {border: 1.5px solid black; background-color:indianred ;}
+        input[type="checkbox"] {accent-color: green; transform: scale(1.5);
+            /* Povećanje veličine kvadratića */
+        }  
+
+        #div-ukloni {width: 100%; padding: 1rem 0.5rem; }
+        button {width: 100%; padding: 1rem 0.5rem; border-radius: 5px;
+            font-size: larger; font-weight: bold; background-color: lightgrey; }
+        button:hover {background-color: indianred; color: lightgrey; border: 2px solid greenyellow;}
+
+        h3 {text-align: right; color: whitesmoke;}
+
+        #div-kalendar {width: 15vw; height: 25vh; position: absolute; top: 2.5%; right: 2%;}
+                
+        @media screen and (max-width: 1139px) {
+            main {width: 77%; }
+        #div-todo, #div-ukloni {width: 100%;}
+        }
+        @media screen and (max-width: 768px) {
+            main {width: 80%; }
+        #div-todo, #div-ukloni {width: 100%;}
+        #div-kalendar {display: none;}
+        }
+        @media screen and (max-width: 450px) {
+            main {width: 98%; margin: 0.3rem 0.2rem; }
+        #div-todo, #div-ukloni {width: 100%; padding: 0.3rem 0.3rem; margin: 0.2em 0.1rem;}
+        }
+    </style>
+</head>
+<body>
+    <main>
+    <div id="div-todo">
+        <table>
+            <thead>
+                <tr>
+                    <th colspan="2"><h2>My Things To Do List</h2></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td id="not-editable"><input type="checkbox"></td>
+                    <td id="editable" class="edit prvi" contenteditable="true">stavka</td>
+                </tr>
+                <tr>
+                    <td id="not-editable"><input type="checkbox"></td>
+                    <td id="editable" class="edit drugi" contenteditable="true">stavka</td>
+                </tr>
+                <tr>
+                    <td id="not-editable"><input type="checkbox"></td>
+                    <td id="editable" class="edit treci" contenteditable="true">stavka</td>
+                </tr>
+                <tr>
+                    <td id="not-editable"><input type="checkbox"></td>
+                    <td id="editable" class="edit cetvrti" contenteditable="true">stavka</td>
+                </tr>  
+                <tr>
+                    <td id="not-editable"><input type="checkbox"></td>
+                    <td id="editable" class="edit cetvrti" contenteditable="true">stavka</td>
+                </tr>
+                <tr>
+                    <td id="not-editable"><input type="checkbox"></td>
+                    <td id="editable" class="edit cetvrti" contenteditable="true">stavka</td>
+                </tr>                                     
+            </tbody>
+            <tfoot onclick="dodajRed()">
+                <tr>
+                    <td colspan="2" id="td-futer"><img src="./images/plus-svgrepo-com.svg" width="40px" height="40px" alt="plusić"></td>
+                </tr>
+            </tfoot>
+        </table>
+    </div> 
+    <div id="div-kalendar">
+        <img src="./images/219477-colorful-2024-calendar-vector.jpg" width="85%" alt="ovdje u planu kalendarić">
+    </div>
+
+    <div id="div-ukloni">
+        <button id="btn-ukloni" onclick="ukloniChecked()">UKLONI CHECKED</button>
+        <br>
+        <button onclick="ocistiStorage()" style="background-color: crimson;">POBRIŠI SVU POHRANU</button>
+    </div> 
+    </main> 
+    <footer>
+        <h3><em>Carpe diem...</em></h3>
+    </footer> 
+    <script>
+        // Funkcija za promjenu stila
+        function promijeniStil(checkbox) {
+            var isChecked = checkbox.checked;
+            var tr = checkbox.parentElement.parentElement;
+            var editableTds = tr.querySelectorAll('td[class^="edit"]');
+            
+            if (isChecked) {
+                editableTds.forEach(function(td) {
+                    td.style.textDecoration = "line-through";
+                    td.style.color = "grey";
+                });
+            } else {
+                editableTds.forEach(function(td) {
+                    td.style.textDecoration = "none";
+                    td.style.color = "black";
+                });
+            }
+        }
+    
+        // Dodavanje događaja promjene stila za postojeće checkboxe
+        var checkboxes = document.querySelectorAll('input[type="checkbox"]');
+        checkboxes.forEach(function(checkbox) {
+            checkbox.addEventListener('change', function() {
+                promijeniStil(checkbox);
+                
+            });
+        });
+    
+        // Funkcija za dodavanje novog reda
+        function dodajRed() { 
+            var tBody = document.querySelector('tbody');
+            var stavka = document.createElement("tr");
+            stavka.setAttribute("id", "stavka");
+            
+            var td1 = document.createElement("td");
+            td1.setAttribute("id", "not-editable");
+            var checkbox = document.createElement("input");
+            checkbox.setAttribute("type", "checkbox");
+            td1.appendChild(checkbox);
+            
+            var td2 = document.createElement("td");
+            td2.setAttribute("class", "edit ");
+            td2.textContent = "nova stavka";
+            td2.setAttribute("contenteditable", "true");
+            
+            stavka.appendChild(td1);
+            stavka.appendChild(td2);
+            
+            tBody.appendChild(stavka);
+    
+            // Dodavanje događaja promjene stila za novododani checkbox
+            checkbox.addEventListener('change', function() {
+                promijeniStil(checkbox);
+                
+            });
+        };
+
+        // Funkcija za spremanje unosa u Local Storage
+function pohraniUnos() {
+    var editables = document.querySelectorAll('.edit'); // Pronalaženje svih elemenata s klasom "edit"
+    var unosi = []; // Inicijalizacija niza za spremanje unosa
+    
+    editables.forEach(function(editable) {
+        unosi.push(editable.textContent); // Dodavanje sadržaja svakog elementa s klasom "edit" u niz
+    });
+    
+    // Spremanje niza unosa u Local Storage
+    localStorage.setItem('unos', JSON.stringify(unosi));
+    
+}
+
+// Funkcija za prikaz pohranjenih unosa
+function prikaziPohranjeneUnose() {
+    var unosi = localStorage.getItem('unos'); // Dohvaćanje pohranjenih unosa iz Local Storage
+    if (unosi) { // Provjera postojanja pohranjenih unosa
+        unosi = JSON.parse(unosi); // Pretvaranje natrag u JavaScript niz
+        var editables = document.querySelectorAll('.edit'); // Pronalaženje svih elemenata s klasom "edit"
+        
+        editables.forEach(function(editable, index) {
+            editable.textContent = unosi[index]; // Postavljanje sadržaja elementa s klasom "edit" na pohranjeni unos
+        });
+    }
+}
+
+// Dodavanje događaja koji će pozvati funkciju pohraniUnos() prije zatvaranja dokumenta
+window.addEventListener('beforeunload', function() {
+    pohraniUnos();
+});
+// Pozivanje funkcije za prikaz pohranjenih unosa prilikom otvaranja stranice
+prikaziPohranjeneUnose()
+
+// Funkcija za uklanjanje označenih redova
+function ukloniChecked() {
+        var checkboxes = document.querySelectorAll('input[type="checkbox"]:checked');
+        checkboxes.forEach(function(checkbox) {
+            var tr = checkbox.parentElement.parentElement;
+            tr.remove();
+        });
+
+        ocistiStorage(); // Pozivamo funkciju za čišćenje Local Storage-a
+        
+    }
+
+    function ocistiStorage() {
+        localStorage.removeItem("unos");
+    }    
+    </script>
+        
+    </body>
+    </html>

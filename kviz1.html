@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kviz</title>
+    <style>
+        body {background-image: url(./images/serije.jpg);
+            background-repeat: repeat; }        
+        section {width: 60%; background-color: beige; opacity: 95%; position: relative; left: 20%;
+        padding-left: 1.5rem; padding-top: 1rem; padding-right: 1.5rem; font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        font-size: larger; line-height: 1.5rem; border-radius: 5px;}
+        h1 {color: darkred; text-align: center;}
+        ul {list-style-type: none; accent-color: darkred;}
+        label {font-weight: bold;}
+        button {padding: 1rem; border-radius: 5px; border: 2px solid darkred;
+            font-size: medium; font-weight: bolder; width: 48%; background-color: goldenrod;}
+        button:hover {background-color: gold; border: 1px solid dimgrey;}
+        #p-rezultat {font-weight: bold;}
+
+        @media screen and (max-width: 550px) {
+            section {width: 98%; left: 0%; margin: 0.2rem; padding: 0.5rem;}
+         }
+    </style>
+</head>
+
+<body>
+    <!--Moram smisliti neki kviz, kako bi otprilike trebao izgledati-->    
+    <section>
+        <h1>KVIZ: TURSKE SERIJE</h1>
+        <form action="">        
+        <label for="pitanje1">1. Koju junakinju turskih serija NISU udali na prevaru?</label>
+        <ul>
+            <li><input type="radio" name="odgovor1" value="false">Silu </li>
+            <li><input type="radio" name="odgovor1" value="false">Sejran </li>
+            <li><input type="radio" name="odgovor1" value="true">Asi </li>
+            <li><input type="radio" name="odgovor1" value="false">Sunu </li>            
+        </ul>
+        </form>
+
+        <form action="">              
+        <label for="pitanje2">2. Koja je turska serija direktna prerada romana "Grof Monte Cristo" francuskog pisca Alexandrea Dumasa?</label>
+        <ul>
+            <li><input type="radio" name="odgovor1" value="false">Očev izbor </li>
+            <li><input type="radio" name="odgovor1" value="false">Miriše na ljubav </li>
+            <li><input type="radio" name="odgovor1" value="false">Pun mjesec </li>
+            <li><input type="radio" name="odgovor1" value="true">Ezel </li>            
+        </ul>
+        </form>
+        
+        <form action="">
+        <label for="pitanje3">3. Koji turski izraz u prijevodu na hrvatski znači "Ispričavam se"?</label>
+        <ul>
+            <li><input type="radio" name="odgovor1" value="true">Özür dilerim! </li>
+            <li><input type="radio" name="odgovor1" value="false" alt="dovidjenja">Güle güle! </li>
+            <li><input type="radio" name="odgovor1" value="false" alt="volim-te">Seni seviyorum! </li>
+            <li><input type="radio" name="odgovor1" value="false" alt="dobar-tek">Afiyet olsun! </li>            
+        </ul>
+        </form>
+
+        <form action="">
+        <label for="pitanje4">4. Glavni ljubavni par "Istanbulske nevjeste" su?</label>
+        <ul>
+            <li><input type="radio" name="odgovor1" value="false">Onur i Šeherezada</li>
+            <li><input type="radio" name="odgovor1" value="true">Faruk i Sureja</li>
+            <li><input type="radio" name="odgovor1" value="false">Riza i Dila</li>
+            <li><input type="radio" name="odgovor1" value="false">Boran i Sila</li>            
+        </ul>
+        </form>
+
+        <form action="">
+        <label for="pitanje5">5. Koja je uloga Zumbul-age u "Sulejmanu Veličanstvenom"?</label>
+        <ul>
+            <li><input type="radio" name="odgovor1" value="false">Veliki vezir</li>
+            <li><input type="radio" name="odgovor1" value="false">Glavni kuhar</li>
+            <li><input type="radio" name="odgovor1" value="true">Čuvar u haremu</li>
+            <li><input type="radio" name="odgovor1" value="false">Janjičarski aga</li>            
+        </ul>
+        </form>          
+        
+        <form action="">        
+            <label for="pitanje6">6. U "Zlatnom kavezu" Pelin ima moćnog opasnog ujaka kojeg nazivaju?</label>
+            <ul>
+                <li><input type="radio" name="odgovor1" value="false">Šehmuz Mileni</li>
+                <li><input type="radio" name="odgovor1" value="false">Manijak Šehmuz</li>
+                <li><input type="radio" name="odgovor1" value="false">Šehmuz Čakija</li>
+                <li><input type="radio" name="odgovor1" value="true">Spaljeni Šehmuz</li>            
+            </ul>
+            </form>
+
+            <hr>
+        <p id="p-rezultat">Broj točnih odgovora: </p>
+        
+        <button onclick="provjeriIzbor()">POŠALJI ODGOVOR</button>        
+        <button onclick="resetiraj()">RESETIRAJ IGRU</button>
+        <br><br> 
+        <!--ZAPAŽANJE - KAD JE BUTTON OMOTAN FORMOM TO OMETA IZVRŠENJE FUNKCIJE-->     
+    </section>
+
+    <script>
+        // Postavljanje globalne varijable za praćenje broja točnih odgovora
+        var brojTocnihOdgovora = 0;
+        
+        function provjeriIzbor() {
+              // Dohvatiti sve radio inpute
+                var radioInputi = document.getElementsByName('odgovor1');
+                  // Iterirati kroz radio inpute
+                    for (var i = 0; i < radioInputi.length; i++) {
+                            // Provjeriti je li radio input čekiran
+                            if (radioInputi[i].checked) {
+
+                                // onda dohvatiti vrijednost radio inputa
+                                    var vrijednost = radioInputi[i].value;
+                                        // Provjeriti je li odgovor točan
+                                        var jeLiTocan = (vrijednost === 'true');
+
+                                         // Ažurirati broj točnih odgovora
+                                         if (jeLiTocan) {
+                                                    brojTocnihOdgovora++;}
+                                                    // Ažurirati prikaz rezultata
+                                        var rezultatElement = document.getElementById('p-rezultat');
+                                        rezultatElement.innerHTML = 'Broj točnih odgovora: ' + brojTocnihOdgovora;
+                                        // i nastaviti petlju ako smo naišli na prvi označeni radio input
+                                        continue;
+                                    }}
+                                    };
+                                    
+        function resetiraj() {
+            brojTocnihOdgovora = 0;
+            var rezultatElement = document.getElementById('p-rezultat');
+            rezultatElement.innerHTML = 'Broj točnih odgovora: 0';        
+
+        var radioInputi = document.getElementsByName('odgovor1');
+          for (var i = 0; i < radioInputi.length; i++) {
+                radioInputi[i].checked = false;
+            }
+        }
+
+/*-- let jeTocno=true;
+        let jePogresno=false; 
+        
+        OBJEKT, ali što s njim?
+        
+var prvoPitanje = new Object()
+prvoPitanje.odgovor1="Avatar";
+prvoPitanje.odgovor2="Peti element";
+prvoPitanje.odgovor3="Titanic";
+prvoPitanje.odgovor4="Terminator";
+
+// Pristupanje svojstvima objekta
+console.log(prvoPitanje.odgovor1);
+--*/
+    </script>    
+</body>
+</html>

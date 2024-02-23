@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boot Vremenska</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <style>        
+        body {background-color: white; background-image: url(./images/pexels-pixabay-209831.jpg);
+            background-size: cover; background-repeat: repeat;}
+        div {min-height: 60px; }
+        .prvi {width:60%; height: 100%; position: relative; left: 2%; margin-top: 0.5rem;
+            background: linear-gradient(lightskyblue, darkslategrey)30%; border: 2px solid lightskyblue;
+            border-radius: 40px; display: flex; flex-wrap: wrap; align-items: center; 
+            color: white; font-family:'Segoe UI', Tahoma, Verdana, sans-serif;          
+            padding: 0.5rem 1rem;       
+        }
+        h1 {width: 100%; font-size: 2rem;}
+        #slikica {width: 110%;}
+        #temperatura {font-size: 2.5rem;}
+        #grad, #opis, #vjetar, #vlaga, #tlak {font-size: 1.5rem;}
+        
+        @media screen and (max-width: 550px) {
+            .prvi {width: 100%; left: 0%; margin: 0rem;}
+         }
+    </style>
+
+</head>
+
+<body>
+    <!--
+        class="container col-md-6 col-12"
+    -->
+
+    <div class="prvi"> 
+        <div class="container">      
+        
+        <div class="row mb-1">
+            <h1>Trenutno vrijeme</h1> 
+        </div>      
+
+    <div class="row mb-0.5">
+        <div class="col-12" id="div-datum">Datum/dan: </div>
+    </div>
+
+    <div class="row justify-content-between mb-0.5">        
+            <div class="col-md-4 col-12">
+                <div class="col" id="grad">Grad: </div>
+            </div>
+
+            <div class="col-md-5 col-12">
+                <div class="row col-12">
+                    <div class="col-md-10 col-9">
+                    <input type="text" class="form-control" id="cityInput" placeholder="Unesite ime grada">
+                    </div>
+                    <div class="col-md-1 col-1">
+                        <img src="./images/search.png" id="myButton" alt="ikonica search" width="20px">
+                    </div>
+            </div>
+            </div>        
+    </div>
+
+    <div class="row justify-content-around align-items-center text-center mb-2">
+        <div class="col-md-3 col-12 my-1">
+            <div><img src="./images/clouds.png" id="slikica" alt="ikonica vremena"></div>
+        </div>
+        <div class="col-md-3 col-12 my-1">
+            <div id="temperatura">0°C</div>
+        </div>
+        <div class="col-md-3 col-12 my-1">
+            <div id="opis">blaga naoblaka</div>
+        </div>
+    </div>
+
+    <div class="row justify-content-around align-items-center text-center mt-1">
+        <div class="col-md-3 col-12 my-1">
+            <img src="./images/wind.png" alt="ikonica vjetar" width="30px" height="30px">
+            <div id="vjetar" style="margin-top: 0.5rem;">Vjetar: 0km/h</div>
+        </div>
+        <div class="col-md-3 col-12 my-1">
+            <img src="./images/humidity.png" alt="ikonica vlaga" width="30px" height="30px">
+            <div id="vlaga" style="margin-top: 0.5rem;">Vlaga: 0%</div>
+        </div>
+        <div class="col-md-3 col-12 my-1">
+            <img src="./images/thermometer-svgrepo-com.svg" alt="ikonica vlaga" width="40px" height="40px">
+            <div id="tlak" style="margin-top: 0.5rem;">Tlak: 0hPa</div>
+        </div>
+    </div>   
+</div> 
+</div>
+
+  </body>
+
+  <script>
+    const d = new Date();
+    document.getElementById("div-datum").innerHTML = d;
+    </script>  
+
+    
+        <script>
+function fetchWeather() {
+    var cityName = document.getElementById('cityInput').value;            
+    var apiKey = '2784033eeb9b6ebd43f745eefc05cbf1';
+    var lang = 'hr';
+
+    // Provjera je li unesen grad
+        if (cityName === "") {
+            alert("Molimo unesite naziv grada.");
+            return; // Prekida funkciju ako polje za unos grada ostavljeno prazno
+}
+
+    fetch('https://api.openweathermap.org/data/2.5/weather?q=' + cityName + '&lang=' + lang + '&appid=' + apiKey)
+        .then(response => response.json())
+        .then(data => {
+            // Ovdje možete obraditi podatke koje ste dobili
+            console.log(data);
+            var temperatureKelvin = data.main.temp;
+            var temperatureCelsius = temperatureKelvin - 273.15; // Pretvorba Kelvin u Celzijevu skalu
+
+            var opisVremena = data.weather[0].description;
+            var brzinaVjetra = data.wind.speed * 3.6 ;
+            var vlaga = data.main.humidity;
+            var tlak = data.main.pressure;
+            var mjernaStanica = data.name;           
+
+            // Postavljanje temperature u element s id "temperatura"
+            document.getElementById('temperatura').textContent = temperatureCelsius.toFixed(1) + ' °C';
+            document.getElementById('opis').textContent = opisVremena;
+            document.getElementById("vjetar").textContent = "Vjetar: " + brzinaVjetra.toFixed(1) + "km/h";
+            document.getElementById("vlaga").textContent = "Vlaga: " + vlaga + "%";
+            document.getElementById("tlak").textContent = "Tlak: " + tlak + "hPa";
+
+            document.getElementById("grad").textContent = cityName + ", " + mjernaStanica; 
+
+            var vremenskiUvjeti = data.weather[0].main; 
+
+            var sunrise = new Date(data.sys.sunrise * 1000); // Pretvorba UNIX vremena izlaska sunca u JavaScript objekt Date
+            var sunset = new Date(data.sys.sunset * 1000); // Pretvorba UNIX vremena zalaska sunca u JavaScript objekt Date
+            var currentTime = new Date();               
+
+            switch (vremenskiUvjeti) {
+                case "Clear":
+                document.getElementById('slikica').src = "./images/clear.png";                    
+                    break;
+
+                case "Rain":
+                    document.getElementById('slikica').src = "./images/rainy-3.svg";                        
+                    break;
+
+                case "Snow":
+                    document.getElementById('slikica').src = "./images/snow.png";
+                    break;
+
+                case "Clouds":
+                    document.getElementById('slikica').src = "./images/clouds.png";
+                    break;
+
+                case "Mist":
+                    document.getElementById('slikica').src = "./images/mist.png";
+                    break;
+
+                case "Fog":
+                    document.getElementById('slikica').src = "./images/fog.svg";
+                    break;
+
+                case "Haze":
+                    document.getElementById('slikica').src = "./images/mist.png";
+                    break;
+
+                case "Drizzle":
+                    document.getElementById('slikica').src = "./images/drizzle.png";
+                    break;
+
+                case "Thunderstorm":
+                    document.getElementById('slikica').src = "./images/isolated-thunderstorms.svg";
+                    break;
+
+                default:
+                    document.getElementById('slikica').src = "./images/weather-svgrepo.com.svg";
+                    document.body.style.backgroundImage = "url('./images/pexels-pixabay-209831.jpg')";
+                    //sa ovim dijelom koda možemo mijenjati i background-image za body!!
+                    break
+            }  
+
+             // Provjera trenutnog doba dana
+             if (currentTime > sunrise && currentTime < sunset) {
+                // Dan
+                document.body.style.backgroundImage = "url('./images/pexels-pixabay-209831.jpg')";
+            } else {
+                // Noć
+                document.body.style.backgroundImage = "url('./images/noc-mjesec.jpg')";
+            }
+        })
+            
+        
+        .catch(error => {
+            console.error('Error fetching weather data:', error);
+        });
+}
+
+document.getElementById('myButton').addEventListener('click', fetchWeather);
+
+document.getElementById('cityInput').addEventListener('keydown', function(event) {
+    if (event.keyCode === 13) { // 13 corresponds to the Enter key
+        fetchWeather();
+    }
+});
+</script>        
+    
+</body>
+</html>

@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Radni list</title>
+    <style>
+        @font-face {
+            font-family: Aller;
+            src: url(./font/Aller_BdIt.ttf);
+        }
+        body {background-color:maroon; 
+            background-image: url(./images/coffee-background-hxef0dviodi4wxj1.jpg); background-repeat: repeat; background-size:100%;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+        header {height: 10vh;}
+        h1, h3 {color: bisque; padding-left: 2rem; font-family: Aller;}        
+        main {display: flex; flex-wrap: wrap; width: 80%; height: fit-content; }
+        #div-kuca, #div-posao, #div-kupovina, #div-zdravlje,
+        #div-slobodno, #div-ostalo {width: 47%; display: flex; flex-wrap: wrap;
+            margin: 0.5rem; padding: 1rem 0.5rem; border-radius: 5px; }
+        table {width: 100%;}
+        tr, th {width:100%; height: 5vh; margin: 1.5rem 0rem;
+            padding-left: 1rem; background-color: whitesmoke; border-radius: 10px;}            
+        td {border-top: 1px solid black; height: 5vh; margin: 1.5rem 0rem; padding: 0.5rem 0.3rem;}
+        td:hover {border-bottom: 1px solid black;} 
+        #not-editable {width: 5%; border-top-left-radius: 10px; border-bottom-left-radius: 10px; border-left: 1px solid black;}
+        #editable {max-width: 14rem; border-right: 1px solid black; border-top-right-radius: 10px; border-bottom-right-radius: 10px;}
+        #td-futer {border: 1px solid black; border-radius: 10px; background-color:lightgrey;}
+        #td-futer:hover {border: 1.5px solid black; background-color:indianred ;}
+        input[type="checkbox"] {accent-color: green; transform: scale(1.5);
+            /* Povećanje veličine kvadratića */
+        }  
+
+        #div-kuca {background-color: gold;}
+        #div-posao {background-color:moccasin ;}
+        #div-kupovina {background-color: greenyellow;}
+        #div-zdravlje {background-color: lightseagreen;}
+        #div-slobodno {background-color: lightpink }
+        #div-ostalo {background-color: palegoldenrod;}
+
+        #div-ukloni {width: 100%; margin-top: 0.5rem;}
+        button {width: 100%; padding: 1rem 0.5rem; border-radius: 5px; font-size: larger; font-weight: bold;
+        background-color: lightgrey; }
+        button:hover {background-color: indianred; color: lightgrey; border: 2px solid greenyellow;}
+        
+        @media screen and (max-width: 1139px) {
+            main {width: 85%; }
+        #div-kuca, #div-posao, #div-kupovina, #div-zdravlje,
+        #div-slobodno, #div-ostalo {width: 44%;}
+        }
+        
+        @media screen and (max-width: 768px) {
+            header {font-size: smaller;}
+            main {width: 100%;}
+                #div-kuca, #div-posao, #div-kupovina,
+                #div-zdravlje, #div-slobodno, #div-ostalo {width:100%;}
+             }
+
+            @media screen and (max-width: 320px) {
+                header {margin-bottom: 0.5rem; font-size: smaller;}
+                h1, h3 {padding-left: 0.5rem;}
+                main {width: 100%;}
+                #div-kuca, #div-posao, #div-kupovina,
+                #div-zdravlje, #div-slobodno, #div-ostalo {width:100%;}
+            }
+    </style>
+</head>
+<!--SA KLASAMA UMJESO ID, FUNKCIJE SVEJEDNO OMETAJU JEDNA DRUGU-->
+
+<body>
+    <header>
+        <h1 style="font-style: italic;">My Things To Do List</h1>
+    </header>       
+    <main>                      
+        <div id="div-kuca">                               
+            <table>
+                <thead>
+                <tr>
+                    <th colspan="2"><h2>Obitelj</h2></th>
+                </tr>
+                </thead>
+                <tbody id="id-tbody1">
+                <tr id="stavka"> 
+                    <td class="not-editable"><input type="checkbox"></td>                                                           
+                    <td class="editable">stavka</td>
+                </tr>
+                <tr>
+                    <td class="not-editable"><input type="checkbox"></td>
+                    <td class="editable" > stavka</td>
+                </tr>
+                <tr>
+                    <td class="not-editable"><input type="checkbox"></td>
+                    <td class="editable"> stavka</td>
+                </tr>
+                <tr>
+                    <td class="not-editable"><input type="checkbox"></td>
+                    <td class="editable" > stavka</td>
+                </tr>
+                <tr>
+                    <td class="not-editable"><input type="checkbox"></td>
+                    <td class="editable" > stavka</td>
+                </tr>
+                </tbody>
+                <tfoot id="tfoot1">
+                    <tr>
+                        <td colspan="2" id="td-futer"><img src="./images/plus-svgrepo-com.svg" width="40px" height="40px" alt="plusić"></td>
+                    </tr>
+                </tfoot>               
+            </table>
+            <br>            
+        </div>
+
+        <div id="div-posao">
+            <table>
+                <thead>                
+                <tr>
+                    <th colspan="2"><h2>Posao</h2></th>
+                </tr>
+            </thead>
+            <tbody id="id-tbody2">
+                <tr id="stavka">
+                    <td class="not-editable"><input type="checkbox"></td>
+                    <td class="editable" >stavka</td>
+                </tr>
+                <tr>
+                    <td class="not-editable"><input type="checkbox"></td>
+                    <td class="editable" >stavka</td>
+                </tr>
+                <tr>
+                    <td id="not-editable"><input type="checkbox"></td>
+                    <td id="editable" >stavka</td>
+                </tr>
+                <tr>
+                    <td id="not-editable"><input type="checkbox"></td>
+                    <td id="editable">stavka</td>
+                </tr>
+                <tr>
+                    <td id="not-editable"><input type="checkbox"></td>
+                    <td id="editable" >stavka</td>
+                </tr>
+            </tbody>
+                <tfoot id="tfoot2">
+                    <tr>
+                        <td colspan="2" id="td-futer"><img src="./images/plus-svgrepo-com.svg" width="40px" height="40px" alt="plusić"></td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>         
+
+        <div id="div-kupovina">
+            <table>
+                <thead>
+                <tr>                    
+                    <th colspan="2"><h2>Nabavka</h2></th>
+                </tr>
+            </thead>
+            <tbody id="id-tbody3">
+                <tr>
+                    <td id="not-editable"><input type="checkbox"></td>
+                    <td id="editable" >stavka</td>
+                </tr>
+                <tr>
+                    <td id="not-editable"><input type="checkbox"></td>
+                    <td id="editable" >stavka</td>
+                </tr>
+                <tr>
+                    <td id="not-editable"><input type="checkbox"></td>
+                    <td id="editable" >stavka</td>
+                </tr>
+                <tr>
+                    <td id="not-editable"><input type="checkbox"></td>
+                    <td id="editable" >stavka</td>
+                </tr>
+                <tr>
+                    <td id="not-editable"><input type="checkbox"></td>
+                    <td id="editable">stavka</td>
+                </tr>
+            </tbody>
+                <tfoot id="tfoot3">
+                    <tr>
+                        <td colspan="2" id="td-futer"><img src="./images/plus-svgrepo-com.svg" width="40px" height="40px" alt="plusić"></td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+
+        <div id="div-zdravlje">
+            <table>
+                <thead>
+                <tr>
+                    <th colspan="2"><h2>Zdravlje</h2></th>
+                </tr>
+            </thead>
+            <tbody id="id-tbody4">
+                <tr>
+                    <td id="not-editable"><input type="checkbox"></td>
+                    <td id="editable" >stavka</td>
+                </tr>
+                <tr>
+                    <td id="not-editable"><input type="checkbox"></td>
+                    <td id="editable" >stavka</td>
+                </tr>
+                <tr>
+                    <td id="not-editable"><input type="checkbox"></td>
+                    <td id="editable" >stavka</td>
+                </tr>
+                <tr>
+                    <td id="not-editable"><input type="checkbox"></td>
+                    <td id="editable" >stavka</td>
+                </tr>
+                <tr>
+                    <td id="not-editable"><input type="checkbox"></td>
+                    <td id="editable" >stavka</td>
+                </tr>
+            </tbody>
+                <tfoot id="tfoot4">
+                    <tr>
+                        <td colspan="2" id="td-futer"><img src="./images/plus-svgrepo-com.svg" width="40px" height="40px" alt="plusić"></td>
+                    </tr>
+                </tfoot>               
+            </table>            
+        </div>
+
+        <div id="div-slobodno">
+            <table>
+                <thead>
+                <tr>
+                    <th colspan="2"><h2>Slobodno vrijeme</h2></th>
+                </tr>
+            </thead>
+            <tbody id="id-tbody5">
+                <tr>
+                    <td id="not-editable"><input type="checkbox"></td>
+                    <td id="editable" >stavka</td>
+                </tr>
+                <tr>
+                    <td id="not-editable"><input type="checkbox"></td>
+                    <td id="editable" >stavka</td>
+                </tr>
+                <tr>
+                    <td id="not-editable"><input type="checkbox"></td>
+                    <td id="editable" >stavka</td>
+                </tr>
+                <tr>
+                    <td id="not-editable"><input type="checkbox"></td>
+                    <td id="editable"  >stavka</td>
+                </tr>
+                <tr>
+                    <td id="not-editable"><input type="checkbox"></td>
+                    <td id="editable" >stavka</td>
+                </tr>
+            </tbody>
+                <tfoot id="tfoot5">
+                    <tr>
+                        <td colspan="2" id="td-futer"><img src="./images/plus-svgrepo-com.svg" width="40px" height="40px" alt="plusić"></td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+
+        <div id="div-ostalo">
+            <table>
+                <thead>
+                <tr>
+                    <th colspan="2"><h2>Ostalo</h2></th>
+                </tr>
+            </thead>
+            <tbody id="id-tbody6">
+                <tr>
+                    <td id="not-editable"><input type="checkbox"></td>
+                    <td id="editable" >stavka</td>
+                </tr>
+                <tr>
+                    <td id="not-editable"><input type="checkbox"></td>
+                    <td id="editable" >stavka</td>
+                </tr>
+                <tr>
+                    <td id="not-editable"><input type="checkbox"></td>
+                    <td id="editable" >stavka</td>
+                </tr>
+                <tr>
+                    <td id="not-editable"><input type="checkbox"></td>
+                    <td id="editable" >stavka</td>
+                </tr>
+                <tr>
+                    <td id="not-editable"><input type="checkbox"></td>
+                    <td id="editable" >stavka</td>
+                </tr>
+            </tbody>
+                <tfoot id="tfoot6">
+                    <tr>
+                        <td colspan="2" id="td-futer"><img src="./images/plus-svgrepo-com.svg" width="40px" height="40px" alt="plusić"></td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+        <div id="div-ukloni">
+            <button id="btn-ukloni" onclick="ukloniChecked()">UKLONI CHECKED</button>
+        </div>                    
+    </main>   
+
+    <footer>
+        <h3><em>Carpe diem...</em></h3>
+    </footer> 
+
+    <!--SKRIPTA--------------------------
+    
+    <script>
+        function obavljenoCheckbox() {
+            var checkboxes = document.querySelectorAll('input[type="checkbox"]');
+            checkboxes.forEach(function(checkbox) {
+                checkbox.addEventListener('change', function() {
+                    var isChecked = checkbox.checked;
+                    var tr = checkbox.parentElement.parentElement;
+                    var editableTds = tr.querySelectorAll('td[id="editable"]');
+                    
+                    if (isChecked) {
+                        editableTds.forEach(function(td) {
+                            td.style.textDecoration = "line-through";
+                            td.style.color = "grey";
+                        });
+                    } else {
+                        editableTds.forEach(function(td) {
+                            td.style.textDecoration = "none";
+                            td.style.color = "black";
+                        });
+                    }
+                });
+            });
+        };
+    
+        function dodajRed(tbodyId) { 
+            var tbody = document.getElementById(tbodyId);
+            var stavka = document.createElement("tr");
+            stavka.setAttribute("id", "stavka");
+            
+            var td1 = document.createElement("td");
+            td1.setAttribute("id", "not-editable");
+            var checkbox = document.createElement("input");
+            checkbox.setAttribute("type", "checkbox");
+            td1.appendChild(checkbox);
+            
+            var td2 = document.createElement("td");
+            td2.setAttribute("id", "editable");
+            td2.textContent = "nova stavka";
+            td2.setAttribute("contenteditable", "true");
+    
+            stavka.appendChild(td1);
+            stavka.appendChild(td2);
+            
+            tbody.appendChild(stavka);
+            
+            // Poziv funkcije za postavljanje contenteditable atributa nakon dodavanja novog reda
+            postaviContentEditable();
+        };
+    
+        function postaviContentEditable() {
+            const tdElements = document.querySelectorAll('td[id="editable"]'); 
+            tdElements.forEach(function(td) {
+                td.setAttribute('contenteditable', 'true');
+                // Pohrana unosa prilikom unosa ili promjene
+                td.addEventListener('input', function() {
+                    localStorage.setItem(td.id, td.textContent);
+                });
+                // Prikaz pohranjenih unosa prilikom učitavanja stranice
+                const pohranjeniUnos = localStorage.getItem(td.id);
+                if (pohranjeniUnos) {
+                    td.textContent = pohranjeniUnos;
+                }
+            });
+        };
+    
+        // Prikaz pohranjenih unosa iz Local Storage-a prilikom učitavanja stranice
+        window.onload = function() {
+            obavljenoCheckbox();
+            postaviContentEditable();
+        };
+    
+        // Pohrana unosa prilikom zatvaranja dokumenta
+        window.addEventListener('beforeunload', function() {
+            const tdElements = document.querySelectorAll('td[id="editable"]');
+            tdElements.forEach(function(td) {
+                localStorage.setItem(td.id, td.textContent);
+            });
+        });
+    </script>
+    ------------------------>
+
+    <script>
+        function postaviContentEditable() {
+            const tdElements = document.querySelectorAll('td[id="editable"]'); 
+            tdElements.forEach(function(td) {
+                td.setAttribute('contenteditable', 'true');
+            });
+        };
+
+        function obavljenoCheckbox() {
+            var checkboxes = document.querySelectorAll('input[type="checkbox"]');
+            checkboxes.forEach(function(checkbox) {
+                checkbox.addEventListener('change', function() {
+                    var isChecked = checkbox.checked;
+                    var tr = checkbox.parentElement.parentElement;
+                    var editableTds = tr.querySelectorAll('td[id="editable"]');
+                    
+                    if (isChecked) {
+                        editableTds.forEach(function(td) {
+                            td.style.textDecoration = "line-through";
+                            td.style.color = "grey";
+                        });
+                    } else {
+                        editableTds.forEach(function(td) {
+                            td.style.textDecoration = "none";
+                            td.style.color = "black";
+                        });
+                    }
+    
+                    
+                });
+            });
+        };        
+    
+        function dodajRed(tbodyId) { 
+            var tbody = document.getElementById(tbodyId);
+            var stavka = document.createElement("tr");
+            stavka.setAttribute("id", "stavka");
+            
+            var td1 = document.createElement("td");
+            td1.setAttribute("id", "not-editable");
+            var checkbox = document.createElement("input");
+            checkbox.setAttribute("type", "checkbox");
+            td1.appendChild(checkbox);
+            
+            var td2 = document.createElement("td");
+            td2.setAttribute("id", "editable");
+            td2.textContent = "nova stavka";
+            td2.setAttribute("contenteditable", "true");
+    
+            
+            stavka.appendChild(td1);
+            stavka.appendChild(td2);
+            
+            tbody.appendChild(stavka);
+            
+            // Poziv funkcije za postavljanje contenteditable atributa nakon dodavanja novog reda
+            postaviContentEditable();
+            
+            // Ponovno dodajemo event listenere za checkboxeve nakon dodavanja novog reda
+            obavljenoCheckbox();
+        };   
+        
+            
+        // Poziv funkcije za postavljanje contenteditable atributa kada se dokument učita
+        window.onload = function() {
+            postaviContentEditable();
+            obavljenoCheckbox();                 
+    
+    
+             // Dodavanje događaja klika na pojedinačne tfoot elemente
+             var tfoot1 = document.getElementById('tfoot1');
+            tfoot1.addEventListener('click', function() {
+                dodajRed('id-tbody1');
+            });
+    
+            var tfoot2 = document.getElementById('tfoot2');
+            tfoot2.addEventListener('click', function() {
+                dodajRed('id-tbody2');
+            });        
+    
+            var tfoot3 = document.getElementById('tfoot3');
+            tfoot3.addEventListener('click', function() {
+                dodajRed('id-tbody3');
+            });
+    
+            var tfoot4 = document.getElementById('tfoot4');
+            tfoot4.addEventListener('click', function() {
+                dodajRed('id-tbody4');
+            });
+    
+            var tfoot5 = document.getElementById('tfoot5');
+            tfoot5.addEventListener('click', function() {
+                dodajRed('id-tbody5');
+            });
+    
+            var tfoot6 = document.getElementById('tfoot6');
+            tfoot6.addEventListener('click', function() {
+                dodajRed('id-tbody6');
+            });    
+        };
+    </script>
+        
+        <script>
+            function ukloniChecked() {
+                var checkboxes = document.querySelectorAll('input[type="checkbox"]');
+                checkboxes.forEach(function(checkbox) {
+                    if (checkbox.checked) {
+                        var tr = checkbox.parentElement.parentElement;
+                        tr.remove();
+                    }
+                });
+            }
+        </script> 
+
+    <!--
+
+<script>
+    function pohraniUnos(elementId) {
+        const element = document.getElementById(elementId);
+        if (element) {
+            element.addEventListener('input', function() {
+                localStorage.setItem(elementId, element.textContent);
+            });
+        }
+    }
+
+    function prikaziUnos(elementId) {
+        const element = document.getElementById(elementId);
+        if (element) {
+            const pohranjeniUnos = localStorage.getItem(elementId);
+            if (pohranjeniUnos) {
+                element.textContent = pohranjeniUnos;
+            }
+        }
+    }
+
+    // Pohrana unosa prilikom zatvaranja dokumenta
+    window.addEventListener('beforeunload', function() {
+        // Ovdje možete dodati dodatnu logiku za pohranu unosa prilikom zatvaranja dokumenta ako je potrebno
+    });
+</script>
+
+<script>
+    // Poziv funkcije za pohranu unosa u element s ID-om "editable"
+    pohraniUnos("editable");
+
+    // Poziv funkcije za prikazivanje pohranjenog unosa u elementu s ID-om "editable"
+    prikaziUnos("editable");
+</script>
+
+--->
+
+<!--
+
+<script>
+    function pohraniSveUnose() {
+        const editableElements = document.querySelectorAll('[id="editable"]');
+        editableElements.forEach(function(element) {
+            element.addEventListener('input', function() {
+                localStorage.setItem(element.id, element.textContent);
+            });
+        });
+    }
+
+    function prikaziSveUnose() {
+        const editableElements = document.querySelectorAll('[id="editable"]');
+        editableElements.forEach(function(element) {
+            const pohranjeniUnos = localStorage.getItem(element.id);
+            if (pohranjeniUnos) {
+                element.textContent = pohranjeniUnos;
+            }
+        });
+    }
+
+    // Pohrana unosa prilikom zatvaranja dokumenta
+    window.addEventListener('beforeunload', function() {
+        const editableElements = document.querySelectorAll('[id="editable"]');
+        editableElements.forEach(function(element) {
+            localStorage.setItem(element.id, element.textContent);
+        });
+    });
+
+    // Prikaz pohranjenih unosa prilikom učitavanja stranice
+    window.onload = function() {
+        prikaziSveUnose();
+    };
+</script>
+-->
+
+<script>
+function pohraniSveUnose() {
+    const editableElements = document.querySelectorAll('.editable');
+    editableElements.forEach(function(element) {
+        element.addEventListener('input', function() {
+            localStorage.setItem(element.id, element.textContent);
+        });
+    });
+}
+
+function prikaziSveUnose() {
+    const editableElements = document.querySelectorAll('.editable');
+    editableElements.forEach(function(element) {
+        const pohranjeniUnos = localStorage.getItem(element.id);
+        if (pohranjeniUnos) {
+            element.textContent = pohranjeniUnos;
+        }
+    });
+}
+
+// Pohrana unosa prilikom zatvaranja dokumenta
+window.addEventListener('beforeunload', function() {
+    const editableElements = document.querySelectorAll('.editable');
+    editableElements.forEach(function(element) {
+        localStorage.setItem(element.id, element.textContent);
+    });
+});
+
+// Prikaz pohranjenih unosa prilikom učitavanja stranice
+window.onload = function() {
+    prikaziSveUnose();
+};
+</script>
+
+<script>        
+    //Local Storage
+    if (typeof(Storage) !== "undefined") {
+
+        let redovi=document.getElementById("editable")            
+        for (var i = 0; i <=redovi.lenght; i++) {
+
+        localStorage.setItem("zadatak", "Pokupiti J. sa treninga");
+        document.getElementById("editable").innerHTML=localStorage.getItem("zadatak");
+        } } else {
+            document.getElementById("editable").innerHTML="Vaš browser ne podržava web pohranu";
+        }
+</script>      
+
+
+            
+    </body>
+    </html>
+    

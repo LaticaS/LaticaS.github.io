@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>treci</title>
+</head>
+<body>
+    <p id="demo"></p>
+
+    <script>
+        //Napišite funkciju koja prima dva broja kao argumente i vraća njihov zbroj.
+        //Testirajte funkciju s različitim brojevima.
+        
+        function zbrajajFunkcija(a, b) { return a + b; };
+        //1.funkcija koja zbraja argumente
+
+        let zbroj=zbrajajFunkcija(5, 2); 
+        console.log(zbroj);
+        document.getElementById("demo").innerHTML="Zbroj: " + zbroj;
+
+        //-------
+        //2.funkcija koja vraća dužinu niza (broj stavki u nizu)
+        function novaFunkcija(arr) { return arr.length };
+
+            let niz=[1, 2, 3, "slovo", "pura", 9];
+            let duzina=novaFunkcija(niz);
+            console.log(duzina)
+    </script>
+    
+</body>
+</html>
