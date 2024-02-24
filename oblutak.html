@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oblutak</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <link rel="icon" href="./images/favicon.png" type="image/png">
+
+    <style>
+        body {font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;}
+        header h1, .podnaslov, footer h4 {color:#BAC7B5; border-bottom: 5px solid;}
+        .podheader, .forma {background-color:#BAC7B5; padding: 2rem;}
+        .btn {background-color:#BAC7B5; font-weight: bold;}
+        .btn:hover {background-color: grey;}
+        input::placeholder {color: #BAC7B5;}        
+
+        .popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /*--efekt prozirne pozadine, a ne utječe na sadržaj!*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.popup img {
+    margin: auto;
+    max-width: 90%;
+    max-height: 90%;
+    border: 2px solid #BAC7B5;
+    padding: 2rem;
+    background-color: #BAC7B5; /* Dodatni stil za sliku */
+}
+
+.zatvori {
+    position: absolute;
+    top: 2vh;
+    right: 28vw;
+    font-size: 3rem;
+    font-weight: bold;
+    color: gold;
+    cursor: pointer;
+}
+
+.zatvori:hover {
+    color: red;
+}
+
+    </style>
+  
+</head>
+
+<body>
+    <header class="row justify-content-between align-items-center">
+        <div class="col-md-4">
+            <div class="row col-6 py-2 mx-5">
+            <h1 class="fw-bold py-1">UKRASNI OBLUTAK</h1>
+            </div>
+            <div class="row col-5 py-2 mx-5 fw-bold">
+            <h4 class="fw-bold">ZA UREĐENJE EKSTERIJERA I INTERIJERA</h4>
+            </div>
+        </div>
+        <div class="col-md-7 header-image justify-content-end">
+            <img src="./images/shutterstock_264839273_obradjeno2.png" class="img-fluid w-100" alt="">            
+        </div>
+    </header>
+
+    <div class="row podheader justify-content-center text-center">
+        <div class="col-5">
+        <h4 class="fw-bold">IZVRSNA PONUDA UKRASNOG OBLUTKA PO IZUZETNO POVOLJNIM CIJENAMA</h4>
+        <p>ŠIROK IZBOR GRANULACIJA, BOJA I OBLIKA</p>
+        </div>
+    </div>  
+    
+    <div class="container">
+
+        <!--1 desno tekst-->
+        <div class="row justify-content-center">
+            <div class="col-md-6 py-5">
+                <img class="img-fluid w-80" src="./images/IMG_20211214_1332421.png" alt="" onclick="prikaziSliku(this.src)">
+            </div>
+
+            <div class="col-md-6 bg-light py-5 px-5 align-items-center">
+                <div class="row"><h4 class="fw-bold">BIJELI MRAMORNI OBLUTAK</h4></div>
+                <div class="row podnaslov mb-2"><h4 class="fw-bold">OBLIKOVANI BIJELI OBLUTAK</h4></div>
+                <div class="row">
+                    <p>Granulacija: </p>
+                </div>
+                <div class="row justify-content-between">
+                    <div class="col-3">
+                        <p>05-15 mm</p>
+                        <p>35-50 mm</p>                      
+                    </div>
+                    <div class="col-3">
+                        <p>15-35 mm</p>
+                        <p>50-80 mm</p>
+                    </div>
+                    <div class="col-3"><img class="img-fluid" src="./images/kod.svg" alt=""></div>
+                </div>
+                <span class="btn text-black upit" onclick="alert('Šta pitaš?! Biž`!')">Cijena na upit</span>
+            </div>
+        </div>
+
+        <!--2 lijevo tekst-->
+
+        <div class="row justify-content-center"> 
+            <div class="col-md-6 bg-light py-5 px-5 align-items-center">
+                <div class="row"><h4 class="fw-bold">BIJELI MRAMORNI OBLUTAK</h4></div>
+                <div class="row podnaslov mb-2"><h4 class="fw-bold">LOMLJENI BIJELI OBLUTAK</h4></div>
+                <div class="row">
+                    <p>Granulacija: </p>
+                </div>
+                <div class="row justify-content-between">
+                    <div class="col-3">
+                        <p>04-08 mm</p>
+                        <p>16-32 mm</p>                      
+                    </div>
+                    <div class="col-3">
+                        <p>08-16 mm</p>
+                        <p>32-64 mm</p>
+                    </div>
+                    <div class="col-3"><img class="img-fluid" src="./images/kod.svg" alt=""></div>
+                </div>
+                <span class="btn text-black" onclick="alert('Još si tu?! E luda čovika!')">Cijena na upit</span>
+            </div>
+
+            <div class="col-md-6 py-5 justify-content-end">                
+                <img class="img-fluid w-80" src="./images/IMG_20211214_132811.png" alt="" onclick="prikaziSliku(this.src)">                
+            </div>
+        </div>
+
+        <!--3 desno tekst-->
+
+        <div class="row justify-content-center">
+            <div class="col-md-6 py-5">
+                <img class="img-fluid w-80" src="./images/IMG_20211214_124018.png" alt="" onclick="prikaziSliku(this.src)">
+            </div>
+
+            <div class="col-md-6 bg-light py-5 px-5 align-items-center">
+                <div class="row"><h4 class="fw-bold">CRNI GRANITNI OBLUTAK</h4></div>
+                <div class="row podnaslov mb-2"><h4 class="fw-bold">OBLIKOVANI CRNI OBLUTAK</h4></div>
+                <div class="row">
+                    <p>Granulacija: </p>
+                </div>
+                <div class="row justify-content-between">
+                    <div class="col-3">
+                        <p>15-25 mm</p>
+                        <p>40-70 mm</p>                      
+                    </div>
+                    <div class="col-3">
+                        <p>25-40 mm</p>
+                        <p>70-100 mm</p>
+                    </div>
+                    <div class="col-3"><img class="img-fluid" src="./images/kod.svg" alt=""></div>
+                </div>
+                <span class="btn text-black" onclick="alert('Ma ajde vanka na sunce!')">Cijena na upit</span>
+            </div>
+        </div>
+
+        <!--4 lijevo tekst-->
+
+        <div class="row justify-content-center"> 
+            <div class="col-md-6 bg-light py-5 px-5 align-items-center">
+                <div class="row"><h4 class="fw-bold">CRNI GRANITNI OBLUTAK</h4></div>
+                <div class="row podnaslov mb-2"><h4 class="fw-bold">LOMLJENI CRNI OBLUTAK</h4></div>
+                <div class="row">
+                    <p>Granulacija: </p>
+                </div>
+                <div class="row justify-content-between">
+                    <div class="col-3">
+                        <p>04-08 mm</p>
+                        <p>20-40 mm</p>                      
+                    </div>
+                    <div class="col-3">
+                        <p>08-20 mm</p>
+                        <p>40-70 mm</p>
+                    </div>
+                    <div class="col-3"><img class="img-fluid" src="./images/kod.svg" alt=""></div>
+                </div>
+                <span class="btn text-black" onclick="alert('Imaš li ti pametnijeg posla!?')" >Cijena na upit</span>
+            </div>
+
+            <div class="col-md-6 py-5 justify-content-end">                
+                <img class="img-fluid w-80" src="./images/IMG_20211214_123729.png" alt="" onclick="prikaziSliku(this.src)">                
+            </div>
+        </div>
+
+
+        <!--5 desno tekst -->
+
+        <div class="row justify-content-center">
+            <div class="col-md-6 py-5">
+                <img class="img-fluid w-80" src="./images/granitni_oblutak.png" alt="" onclick="prikaziSliku(this.src)">
+            </div>
+
+            <div class="col-md-6 bg-light py-5 px-5 align-items-center">
+                <div class="row"><h4 class="fw-bold">GRANIT "ZEBRA"</h4></div>
+                <div class="row podnaslov mb-2"><h4 class="fw-bold">OBLIKOVANI GRANITNI OBLUTAK</h4></div>
+                <div class="row">
+                    <p>Granulacija: </p>
+                </div>
+                <div class="row justify-content-between">
+                    <div class="col-3">                        
+                        <p>40-100 mm</p>                      
+                    </div>
+                    <div class="col-3">                        
+                    </div>
+                    <div class="col-3"><img class="img-fluid" src="./images/kod.svg" alt=""></div>
+                </div>
+                <span class="btn text-black" onclick="alert('Ti si čini mi se malo munjen!')">Cijena na upit</span>
+            </div>
+        </div>
+
+        <!--6 lijevo tekst-->
+
+        <div class="row justify-content-center"> 
+            <div class="col-md-6 bg-light py-5 px-5 align-items-center">
+                <div class="row"><h4 class="fw-bold">CRVENI OBLUTAK</h4></div>
+                <div class="row podnaslov mb-2"><h4 class="fw-bold">OBLIKOVANI CRVENI OBLUTAK</h4></div>
+                <div class="row">
+                    <p>Granulacija: </p>
+                </div>
+                <div class="row justify-content-between">
+                    <div class="col-3">                        
+                        <p>40-100 mm</p>                      
+                    </div>
+                    <div class="col-3">                        
+                    </div>
+                    <div class="col-3"><img class="img-fluid" src="./images/kod.svg" alt=""></div>
+                </div>
+                <span class="btn text-black" onclick="alert('Idi vanka, ne budi vampir!')">Cijena na upit</span>
+            </div>
+
+            <div class="col-md-6 py-5 justify-content-end">                
+                <img class="img-fluid w-80" src="./images/crveni_oblikovani.png" alt="" onclick="prikaziSliku(this.src)">                
+            </div>
+        </div>
+
+        <!--7 desno tekst-->
+
+        <div class="row justify-content-center">
+            <div class="col-md-6 py-5">
+                <img class="img-fluid w-80" src="./images/IMG_20211214_135342.png" alt="" onclick="prikaziSliku(this.src)">
+            </div>
+
+            <div class="col-md-6 bg-light py-5 px-5 align-items-center">
+                <div class="row"><h4 class="fw-bold">CRVENI OBLUTAK</h4></div>
+                <div class="row podnaslov mb-2"><h4 class="fw-bold">LOMLJENI CRVENI OBLUTAK</h4></div>
+                <div class="row">
+                    <p>Granulacija: </p>
+                </div>
+                <div class="row justify-content-between">
+                    <div class="col-3">                        
+                        <p>40-100 mm</p>                      
+                    </div>
+                    <div class="col-3">                        
+                        
+                    </div>
+                    <div class="col-3"><img class="img-fluid" src="./images/kod.svg" alt=""></div>
+                </div>
+                <span class="btn text-black" onclick="alert('Inače, šta ima? Kako žena-dica?')">Cijena na upit</span>
+            </div>
+        </div>
+
+        <!--8 lijevo tekst-->
+
+        <div class="row justify-content-center"> 
+            <div class="col-md-6 bg-light py-5 px-5 align-items-center">
+                <div class="row"><h4 class="fw-bold">ZELENI OBLUTAK</h4></div>
+                <div class="row podnaslov mb-2"><h4 class="fw-bold">LOMLJENI ZELENI OBLUTAK</h4></div>
+                <div class="row">
+                    <p>Granulacija: </p>
+                </div>
+                <div class="row justify-content-between">
+                    <div class="col-3">                        
+                        <p>40-100 mm</p>                      
+                    </div>
+                    <div class="col-3">
+                        
+                    </div>
+                    <div class="col-3"><img class="img-fluid" src="./images/kod.svg" alt=""></div>
+                </div>
+                <span class="btn text-black" onclick="alert('I, jesi više doša pameti?!')">Cijena na upit</span>
+            </div>
+
+            <div class="col-md-6 py-5 justify-content-end">                
+                <img class="img-fluid w-80" src="./images/IMG_20211214_135641.png" alt="" onclick="prikaziSliku(this.src)">                
+            </div>
+        </div>
+
+    </div>
+
+
+    <!--forma -->
+
+
+    <div class="row forma justify-content-center text-left">       
+
+            <form class="col-md-5 bg-light p-3">
+                <div class="my-3">                    
+                    <input type="text" class="form-control" id="ime-prezime" placeholder="Ime i prezime" aria-describedby="ime-prezime">                    
+                  </div>
+                <div class="mb-3">                  
+                  <input type="email" class="form-control" id="exampleInputEmail1" placeholder="E-mail" aria-describedby="emailHelp">                  
+                </div>
+                <div class="mb-3">                  
+                  <input type="phone" class="form-control" id="telefon" placeholder="Telefon">
+                </div>
+                <div class="mb-3">                  
+                    <textarea class="form-control" id="exampleTextarea" rows="3" placeholder="Poruka"></textarea>
+                </div>
+
+                <div class="mb-3 form-check">
+                  <label class="form-check-label" for="exampleCheck1">Slažem se</label>
+                  <input type="checkbox" class="form-check-input" id="exampleCheck1">                                    
+                </div>
+                <p class="small">Korištenjem ovog obrasca prihvaćate prikupljanje i obradu osobnih podataka danih
+                    u obrascu bez kojih vaš zahtjev u obrascu ne može biti ispunjen.
+                </p>
+                <div class="mb-3 text-center text-dark ">
+                <button type="submit" class="btn">Pošalji upit</button>
+                </div>
+              </form>       
+        
+    </div> 
+
+
+
+    
+
+<div class="container">
+    <footer class="row justify-content-center align-items-center py-3 my-4">
+        <div class="col-md-5 px-5 mx-5 text-center fw-bold">
+          <h4 class="fw-bold pb-2">KONTAKT</h4>
+          
+          <p class="nav-item text-center"><a href="#" class="nav-link px-2 text-body-secondary">
+            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="#BAC7B5" class="bi bi-phone-vibrate-fill" viewBox="0 0 16 16">
+                <path d="M4 4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm5 7a1 1 0 1 0-2 0 1 1 0 0 0 2 0M1.807 4.734a.5.5 0 1 0-.884-.468A8 8 0 0 0 0 8c0 1.347.334 2.618.923 3.734a.5.5 0 1 0 .884-.468A7 7 0 0 1 1 8c0-1.18.292-2.292.807-3.266m13.27-.468a.5.5 0 0 0-.884.468C14.708 5.708 15 6.819 15 8c0 1.18-.292 2.292-.807 3.266a.5.5 0 0 0 .884.468A8 8 0 0 0 16 8a8 8 0 0 0-.923-3.734M3.34 6.182a.5.5 0 1 0-.93-.364A6 6 0 0 0 2 8c0 .769.145 1.505.41 2.182a.5.5 0 1 0 .93-.364A5 5 0 0 1 3 8c0-.642.12-1.255.34-1.818m10.25-.364a.5.5 0 0 0-.93.364c.22.563.34 1.176.34 1.818s-.12 1.255-.34 1.818a.5.5 0 0 0 .93.364C13.856 9.505 14 8.769 14 8s-.145-1.505-.41-2.182"/>
+              </svg>
+            </a></p> 
+               
+          <p class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">+385 99 43 75 411</a></p>
+          <p class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">+385 99 383 26 54</a></p>
+
+          <p class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">
+            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="#BAC7B5" class="bi bi-envelope" viewBox="0 0 16 16">
+                <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1zm13 2.383-4.708 2.825L15 11.105zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741M1 11.105l4.708-2.897L1 5.383z"/>
+              </svg>
+
+          </a></p> 
+
+          <p class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">info@design4you.hr</a></p>
+
+          <p class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">
+            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="#BAC7B5" class="bi bi-globe2" viewBox="0 0 16 16">
+                <path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m7.5-6.923c-.67.204-1.335.82-1.887 1.855q-.215.403-.395.872c.705.157 1.472.257 2.282.287zM4.249 3.539q.214-.577.481-1.078a7 7 0 0 1 .597-.933A7 7 0 0 0 3.051 3.05q.544.277 1.198.49zM3.509 7.5c.036-1.07.188-2.087.436-3.008a9 9 0 0 1-1.565-.667A6.96 6.96 0 0 0 1.018 7.5zm1.4-2.741a12.3 12.3 0 0 0-.4 2.741H7.5V5.091c-.91-.03-1.783-.145-2.591-.332M8.5 5.09V7.5h2.99a12.3 12.3 0 0 0-.399-2.741c-.808.187-1.681.301-2.591.332zM4.51 8.5c.035.987.176 1.914.399 2.741A13.6 13.6 0 0 1 7.5 10.91V8.5zm3.99 0v2.409c.91.03 1.783.145 2.591.332.223-.827.364-1.754.4-2.741zm-3.282 3.696q.18.469.395.872c.552 1.035 1.218 1.65 1.887 1.855V11.91c-.81.03-1.577.13-2.282.287zm.11 2.276a7 7 0 0 1-.598-.933 9 9 0 0 1-.481-1.079 8.4 8.4 0 0 0-1.198.49 7 7 0 0 0 2.276 1.522zm-1.383-2.964A13.4 13.4 0 0 1 3.508 8.5h-2.49a6.96 6.96 0 0 0 1.362 3.675c.47-.258.995-.482 1.565-.667m6.728 2.964a7 7 0 0 0 2.275-1.521 8.4 8.4 0 0 0-1.197-.49 9 9 0 0 1-.481 1.078 7 7 0 0 1-.597.933M8.5 11.909v3.014c.67-.204 1.335-.82 1.887-1.855q.216-.403.395-.872A12.6 12.6 0 0 0 8.5 11.91zm3.555-.401c.57.185 1.095.409 1.565.667A6.96 6.96 0 0 0 14.982 8.5h-2.49a13.4 13.4 0 0 1-.437 3.008M14.982 7.5a6.96 6.96 0 0 0-1.362-3.675c-.47.258-.995.482-1.565.667.248.92.4 1.938.437 3.008zM11.27 2.461q.266.502.482 1.078a8.4 8.4 0 0 0 1.196-.49 7 7 0 0 0-2.275-1.52c.218.283.418.597.597.932m-.488 1.343a8 8 0 0 0-.395-.872C9.835 1.897 9.17 1.282 8.5 1.077V4.09c.81-.03 1.577-.13 2.282-.287z"/>
+              </svg>
+
+          </a></p> 
+
+          <p class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">ukrasnioblutak.hr</a></p>
+          
+          <p class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary"><img src="./images/logo_firme.png" width="200px" alt=""></a></p>          
+        
+      </div>
+    </footer>   
+</div>
+
+
+<script>
+    //funkcija za pop-up prozor
+
+    function prikaziSliku(src) {
+    // Kreiranje pop-up prozora
+    var popupDiv = document.createElement("div");
+    popupDiv.classList.add("popup");
+    
+    // Kreiranje slike
+    var popupSlika = document.createElement("img");
+    popupSlika.src = src;
+    popupSlika.classList.add("img-fluid");
+    
+    // Dodavanje slike u pop-up prozor
+    popupDiv.appendChild(popupSlika);
+    
+    // Dodavanje X za zatvaranje pop-up prozora
+    var zatvori = document.createElement("span");
+    zatvori.innerHTML = "&times;";  // &times je alias za znak X, da web prepozna neovisno o fontu/kodu.
+    zatvori.classList.add("zatvori");
+    zatvori.onclick = function() {
+        document.body.removeChild(popupDiv);
+    };
+    popupDiv.appendChild(zatvori);
+
+    // Dodavanje pop-up prozora na kraj body elementa
+    document.body.appendChild(popupDiv);
+}
+
+</script>
+
+<!--
+
+<script>
+    // kod za sve klase "upit"
+document.addEventListener("DOMContentLoaded", function() {
+    var upitBtn = document.querySelector('.upit');
+    upitBtn.addEventListener('click', function() {
+        alert('Šta pitaš?! Skupo ko vrag!');
+    });
+});
+</script>
+
+-->
+
+</body>
+</html>
