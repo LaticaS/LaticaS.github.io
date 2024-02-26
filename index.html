@@ -9,15 +9,16 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <style>
         body {background-color:blanchedalmond ;}
+        .mail:hover, .tel:hover {font-weight: bold;}
     </style>
     
     </head>
 <body>
-    <div class="row">
+    <div class="row" id="home">
     <div class="col-md-4"> 
     <div class="d-flex flex-column flex-shrink-0 p-3 text-bg-dark h-100" style="width: 280px;">
         <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
-          <img src="fotke/Latica, manja fotka.jpg" class="bi pe-none me-2 rounded-circle" width="100"></img>          
+          <img src="fotke/Latica, manja fotka.jpg" class="bi pe-none me-2 border border-secondary rounded-circle" width="100"></img>          
           <span class="fs-4">LaticaS</span>
         </a>
         <hr>
@@ -29,13 +30,13 @@
             </a>
           </li>
           <li>
-            <a href="#" class="nav-link text-white">
+            <a href="#about" class="nav-link text-white">
               <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#speedometer2"></use></svg>
               O meni / About
             </a>
           </li>
           <li>
-            <a href="#" class="nav-link text-white">
+            <a href="#radovi" class="nav-link text-white">
               <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#table"></use></svg>
               What I Do
             </a>
@@ -82,19 +83,21 @@
         <h1 class="display-5 fw-bold text-body-emphasis">Welcome</h1>
         <div class="col-lg-6 mx-auto">
             <p class="lead mb-4">I am Latica Škubonja</p>
-          <p class="lead mb-4">Full Stack Developer Apprentice</p>
+          <p class="lead mb-4">Full Stack Developer Trainee</p>
           <p class="lead mb-4">based in Šibenik, Croatia</p>          
         </div>
       </div>
     </div>
 </div>
 
+<!--bufer div-->
+
 <div class="row p-3 m-3"></div>
 
-<!--drugi red pod bannerom-->
+<!--red pod bannerom-->
 
-<div class="container text-center py-5 wow fadeInUp border-top border-dark" style="visibility: visible; animation-name: fadeInUp;">
-  <h1 class="display-6 my-other-font pb-4">Moji radovi</h1> 
+<div class="container text-center py-5 wow fadeInUp border-top border-dark" id="radovi" style="visibility: visible; animation-name: fadeInUp;">
+  <h1 class="display-6 my-other-font pb-4 mb-4">Moji radovi</h1> 
 
   <div class="card-group mb-4">
     <div class="card mx-3">
@@ -106,7 +109,7 @@
         <p class="card-text">HTML, CSS, JavaScript</p>
       </div>
       <div class="card-footer bg-dark">
-        <a href="izrada-web-stranice-web-shop-v2-LaticaS/" target="_blank" class="btn btn-danger">Pogledajte</a>        
+        <a href="izrada-web-stranice-web-shop-v2-LaticaS/" target="_blank" class="btn btn-danger">Više</a>        
       </div>
     </div>
     <div class="card">
@@ -118,7 +121,7 @@
         <p class="card-text">HTML, CSS</p>
       </div>
       <div class="card-footer bg-dark">
-        <a href="web-orah.html" target="_blank" class="btn btn-danger">Pogledajte</a>        
+        <a href="web-orah.html" target="_blank" class="btn btn-danger">Više</a>        
       </div>
     </div>
     <div class="card mx-3">
@@ -130,7 +133,7 @@
         <p class="card-text">Bootstrap, CSS, JavaScript</p>
       </div>
       <div class="card-footer bg-dark">
-        <a href="oblutak.html" target="_blank" class="btn btn-danger">Pogledajte</a>        
+        <a href="oblutak.html" target="_blank" class="btn btn-danger">Više</a>        
       </div>
     </div>
   </div>
@@ -147,7 +150,7 @@
         <p class="card-text">Bootstrap, CSS, API, JavaScript</p>
       </div>
       <div class="card-footer bg-dark">
-        <a href="vremenska-prognoza.html" target="_blank" class="btn btn-danger">Pogledajte</a>        
+        <a href="vremenska-prognoza.html" target="_blank" class="btn btn-danger">Više</a>        
       </div>
     </div>
     <div class="card">
@@ -159,7 +162,7 @@
         <p class="card-text">HTML, CSS, JavaScript</p>
       </div>
       <div class="card-footer bg-dark">
-        <a href="todo-lista-manja.html" target="_blank" class="btn btn-danger">Pogledajte</a>        
+        <a href="todo-lista-manja.html" target="_blank" class="btn btn-danger">Više</a>        
       </div>
     </div>
     <div class="card mx-3">
@@ -171,37 +174,76 @@
         <p class="card-text">HTML, CSS, JavaScript</p>
       </div>
       <div class="card-footer bg-dark">
-        <a href="kviz2.html" target="_blank" class="btn btn-danger">Pogledajte</a>
-        <a href="kviz1.html" target="_blank" class="btn btn-danger">Pogledajte</a>        
+        <a href="kviz2.html" target="_blank" class="btn btn-danger">Više</a>
+        <a href="kviz1.html" target="_blank" class="btn btn-danger">Više</a>        
       </div>
     </div>
   </div>
 
 </div>
 
+<div class="container  py-5 wow fadeInUp border-top border-dark" id="about" style="visibility: visible; animation-name: fadeInUp;">
+<h1 class="display-6 my-other-font pb-2 text-center">O meni / About</h1>
 
-
-
-
-
-
-<!--futer-->
-
-<div class="kontakt border-2 border-top border-dark" id="kontakt" data-sr-id="7" style="visibility: visible; opacity: 1; transition: opacity 0.6s cubic-bezier(0.5, 0, 0, 1) 0s;">
-  <div class="container text-center py-5 wow fadeInUp" style="visibility: visible; animation-name: fadeInUp;">
-      <h1 class="display-6 my-other-font pb-4">Kontakt</h1>
-      
-      <a href="tel: +38598......." class="tel text-danger"><p class="pb-3">Phone</p></a>      
-      <a href="mailto: skubonjal@gmail.com" class="mail text-danger"><p class="pb-3">skubonjal@gmail.com</p></a>
-      <a href="mailto: galerija-latica@net.hr" class="mail text-danger"><p class="pb-3">galerija-latica@net.hr</p></a>
+<div class="row">
+<div class="col-md-6 banner">
+  <div class="px-4 py-4 my-4 text-center">
+    <img class="d-block mx-auto mb-4 rounded-circle w-100" src="slike-portfolio/ruže2 skrinšot.png" alt="Ruže" title="About">
   </div>
 </div>
 
+<div class="col-md-6 text-left">
+  <div class="px-4 py-4 my-4">
+    <h3 class="fw-bold mb-4 pb-4 text-danger">Latica Škubonja</h3>           
+      <p class="lead mb-3">Trenutno: Full Stack Developer trainee / Trokut NEET 4.0 Akademija</p>
+      <p class="lead mb-3">Mjesto stanovanja: Šibenik, Hrvatska</p>
+      <p class="lead mb-3">Obrazovanje: </p>
+      <p class="lead mb-3">Učilište za poslovno upravljanje, Zagreb / Sveučilište u Zadru / Opća gimnazija Ploče</p>     
+    
+  </div>
+</div>
+</div>
 
 
+</div>
 
 
+<!--kontakt nadfuter-->
 
+<div class="container  py-3 wow fadeInUp border-top border-dark" style="visibility: visible; animation-name: fadeInUp;">
+<div class="kontakt" id="kontakt" data-sr-id="7" style="visibility: visible; opacity: 1; transition: opacity 0.6s cubic-bezier(0.5, 0, 0, 1) 0s;">
+  <div class="container text-center py-5 wow fadeInUp" style="visibility: visible; animation-name: fadeInUp;">
+      <h1 class="display-6 my-other-font pb-3 mb-3">Kontakt</h1>
+      <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-phone-vibrate mb-3 text-danger" viewBox="0 0 16 16">
+        <path d="M10 3a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1zM6 2a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h4a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2z"/>
+        <path d="M8 12a1 1 0 1 0 0-2 1 1 0 0 0 0 2M1.599 4.058a.5.5 0 0 1 .208.676A7 7 0 0 0 1 8c0 1.18.292 2.292.807 3.266a.5.5 0 0 1-.884.468A8 8 0 0 1 0 8c0-1.347.334-2.619.923-3.734a.5.5 0 0 1 .676-.208m12.802 0a.5.5 0 0 1 .676.208A8 8 0 0 1 16 8a8 8 0 0 1-.923 3.734.5.5 0 0 1-.884-.468A7 7 0 0 0 15 8c0-1.18-.292-2.292-.807-3.266a.5.5 0 0 1 .208-.676M3.057 5.534a.5.5 0 0 1 .284.648A5 5 0 0 0 3 8c0 .642.12 1.255.34 1.818a.5.5 0 1 1-.93.364A6 6 0 0 1 2 8c0-.769.145-1.505.41-2.182a.5.5 0 0 1 .647-.284m9.886 0a.5.5 0 0 1 .648.284C13.855 6.495 14 7.231 14 8s-.145 1.505-.41 2.182a.5.5 0 0 1-.93-.364C12.88 9.255 13 8.642 13 8s-.12-1.255-.34-1.818a.5.5 0 0 1 .283-.648"/>
+      </svg>      
+      <a href="tel: +38598......." class="tel text-danger text-decoration-none"><p class="pb-3">Phone</p></a>
+      <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-envelope-at mb-3 text-danger" viewBox="0 0 16 16">
+        <path d="M2 2a2 2 0 0 0-2 2v8.01A2 2 0 0 0 2 14h5.5a.5.5 0 0 0 0-1H2a1 1 0 0 1-.966-.741l5.64-3.471L8 9.583l7-4.2V8.5a.5.5 0 0 0 1 0V4a2 2 0 0 0-2-2zm3.708 6.208L1 11.105V5.383zM1 4.217V4a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v.217l-7 4.2z"/>
+        <path d="M14.247 14.269c1.01 0 1.587-.857 1.587-2.025v-.21C15.834 10.43 14.64 9 12.52 9h-.035C10.42 9 9 10.36 9 12.432v.214C9 14.82 10.438 16 12.358 16h.044c.594 0 1.018-.074 1.237-.175v-.73c-.245.11-.673.18-1.18.18h-.044c-1.334 0-2.571-.788-2.571-2.655v-.157c0-1.657 1.058-2.724 2.64-2.724h.04c1.535 0 2.484 1.05 2.484 2.326v.118c0 .975-.324 1.39-.639 1.39-.232 0-.41-.148-.41-.42v-2.19h-.906v.569h-.03c-.084-.298-.368-.63-.954-.63-.778 0-1.259.555-1.259 1.4v.528c0 .892.49 1.434 1.26 1.434.471 0 .896-.227 1.014-.643h.043c.118.42.617.648 1.12.648m-2.453-1.588v-.227c0-.546.227-.791.573-.791.297 0 .572.192.572.708v.367c0 .573-.253.744-.564.744-.354 0-.581-.215-.581-.8Z"/>
+      </svg>     
+      <a href="mailto: skubonjal@gmail.com" class="mail text-danger text-decoration-none"><p class="pb-3">skubonjal@gmail.com</p></a>
+      <a href="mailto: galerija-latica@net.hr" class="mail text-danger text-decoration-none"><p class="pb-3">galerija-latica@net.hr</p></a>
+  </div>
+</div>
+</div>
+
+<!--futer-->
+<footer class="d-flex flex-wrap justify-content-between align-items-center py-3 bg-dark">
+    <p class="col-md-4 mb-0 text-white px-2">Copyright © 2024 LaticaS</p>
+
+    <a href="#home" class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+      <img src="slike-portfolio/flower-sunflower-flora-petal-preview.jpg" class="img-fluid rounded-circle" width="40px" alt="">
+    </a>
+
+    <ul class="nav col-md-4 justify-content-end px-2">
+      <li class="nav-item"><a href="#home" class="nav-link px-2 text-light">Home</a></li>      
+      <li class="nav-item"><a href="#about" class="nav-link px-2 text-light">About</a></li>
+      <li class="nav-item"><a href="#radovi" class="nav-link px-2 text-light">Radovi</a></li>
+      <li class="nav-item"><a href="#kontakt" class="nav-link px-2 text-light">Kontakt</a></li>      
+    </ul>
+  </footer>
 
 
     
