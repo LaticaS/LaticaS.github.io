@@ -10,7 +10,7 @@
 
     <style>
         body {font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;}
-        header h1, .podnaslov, footer h4 {color:#BAC7B5; border-bottom: 5px solid;}
+        header h1, .podnaslov, footer h4, .modal-header {color:#BAC7B5; border-bottom: 5px solid;}
         .podheader, .forma {background-color:#BAC7B5; padding: 2rem;}
         .btn {background-color:#BAC7B5; font-weight: bold;}
         .btn:hover {background-color: grey;}
@@ -103,7 +103,7 @@
                     </div>
                     <div class="col-3"><img class="img-fluid" src="./images/kod.svg" alt=""></div>
                 </div>
-                <span class="btn text-black upit" onclick="alert('Povoljno')">Cijena na upit</span>
+                <span class="btn text-black upit" onclick="" data-bs-toggle="modal" data-bs-target="#myModal">Cijena na upit</span>
             </div>
         </div>
 
@@ -127,7 +127,7 @@
                     </div>
                     <div class="col-3"><img class="img-fluid" src="./images/kod.svg" alt=""></div>
                 </div>
-                <span class="btn text-black" >Cijena na upit</span>
+                <span class="btn text-black" data-bs-toggle="modal" data-bs-target="#myModal">Cijena na upit</span>
             </div>
 
             <div class="col-md-6 py-5 justify-content-end">                
@@ -159,7 +159,7 @@
                     </div>
                     <div class="col-3"><img class="img-fluid" src="./images/kod.svg" alt=""></div>
                 </div>
-                <span class="btn text-black" >Cijena na upit</span>
+                <span class="btn text-black" data-bs-toggle="modal" data-bs-target="#myModal">Cijena na upit</span>
             </div>
         </div>
 
@@ -183,7 +183,7 @@
                     </div>
                     <div class="col-3"><img class="img-fluid" src="./images/kod.svg" alt=""></div>
                 </div>
-                <span class="btn text-black" >Cijena na upit</span>
+                <span class="btn text-black" data-bs-toggle="modal" data-bs-target="#myModal">Cijena na upit</span>
             </div>
 
             <div class="col-md-6 py-5 justify-content-end">                
@@ -213,7 +213,7 @@
                     </div>
                     <div class="col-3"><img class="img-fluid" src="./images/kod.svg" alt=""></div>
                 </div>
-                <span class="btn text-black" >Cijena na upit</span>
+                <span class="btn text-black" data-bs-toggle="modal" data-bs-target="#myModal">Cijena na upit</span>
             </div>
         </div>
 
@@ -234,7 +234,7 @@
                     </div>
                     <div class="col-3"><img class="img-fluid" src="./images/kod.svg" alt=""></div>
                 </div>
-                <span class="btn text-black" >Cijena na upit</span>
+                <span class="btn text-black" data-bs-toggle="modal" data-bs-target="#myModal">Cijena na upit</span>
             </div>
 
             <div class="col-md-6 py-5 justify-content-end">                
@@ -264,7 +264,7 @@
                     </div>
                     <div class="col-3"><img class="img-fluid" src="./images/kod.svg" alt=""></div>
                 </div>
-                <span class="btn text-black" >Cijena na upit</span>
+                <span class="btn text-black" data-bs-toggle="modal" data-bs-target="#myModal">Cijena na upit</span>
             </div>
         </div>
 
@@ -286,7 +286,7 @@
                     </div>
                     <div class="col-3"><img class="img-fluid" src="./images/kod.svg" alt=""></div>
                 </div>
-                <span class="btn text-black" >Cijena na upit</span>
+                <span class="btn text-black" data-bs-toggle="modal" data-bs-target="#myModal">Cijena na upit</span>
             </div>
 
             <div class="col-md-6 py-5 justify-content-end">                
@@ -371,6 +371,48 @@
       </div>
     </footer>   
 </div>
+
+
+<!--MODAL-->
+<div class="modal modal-m" tabindex="-1" id="myModal" >
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">UKRASNI OBLUTAK - UPIT</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body bg-light">
+
+            <div class="my-3">                    
+                <input type="text" class="form-control" id="ime-prezime" placeholder="Ime i prezime" aria-describedby="ime-prezime">                    
+              </div>
+            <div class="mb-3">                  
+              <input type="email" class="form-control" id="exampleInputEmail1" placeholder="E-mail" aria-describedby="emailHelp">                  
+            </div>
+            <div class="mb-3">                  
+              <input type="phone" class="form-control" id="telefon" placeholder="Telefon">
+            </div>
+            <div class="mb-3">                  
+                <textarea class="form-control" id="exampleTextarea" rows="3" placeholder="Poruka"></textarea>
+            </div>
+
+            <div class="mb-3 form-check">
+              <label class="form-check-label" for="exampleCheck1">Slažem se</label>
+              <input type="checkbox" class="form-check-input" id="exampleCheck1">                                    
+            </div>
+            <p class="small">Korištenjem ovog obrasca prihvaćate prikupljanje i obradu osobnih podataka danih
+                u obrascu bez kojih vaš zahtjev u obrascu ne može biti ispunjen.
+            </p>
+            <div class="mb-3 text-center text-dark ">
+            <button type="submit" class="btn">Pošalji upit</button>
+            </div>
+
+            </div> 
+        </div>
+        
+      </div>
+    </div>
+  </div>
 
 
 <script>
