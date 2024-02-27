@@ -16,9 +16,9 @@
   <nav class="py-2 border-bottom sage" id="pocetna">
     <div class="container d-flex flex-wrap">
       <ul class="nav me-auto">
-        <li class="nav-item"><a href="#pocetna" class="nav-link link-body-emphasis px-2 active" aria-current="page">Početna</a></li>
-        <li class="nav-item"><a href="#smjestaj" class="nav-link link-body-emphasis px-2">Smještaj</a></li>
-        <li class="nav-item"><a href="#kontakt" class="nav-link link-body-emphasis px-2">Kontakt</a></li>        
+        <li class="nav-item"><a href="#pocetna" class="nav-link link-body-emphasis px-2 active" id="nav-pocetna" aria-current="page">Početna</a></li>
+        <li class="nav-item"><a href="#smjestaj" class="nav-link link-body-emphasis px-2" id="nav-smjestaj">Smještaj</a></li>
+        <li class="nav-item"><a href="#kontakt" class="nav-link link-body-emphasis px-2" id="nav-kontakt">Kontakt</a></li>        
       </ul>
       <ul class="nav">
         <li class="nav-item">
@@ -67,7 +67,7 @@
       <div class="carousel-inner">
         <div class="carousel-item active">
           <img src="./slike za vilu/vila neka.jpg" class="d-block w-100" alt="...">
-          <div class="carousel-caption d-none d-md-block ">
+          <div class="carousel-caption d-none d-md-block display-5">
             <h1 id="karusel-naslov-prvi">LUKSUZNA VILA ZA ODMOR</h1>
             <p id="karusel-par1">DIZAJNERSKA VILA SA BAZENOM U ŠIBENIKU</p>
           </div>
@@ -199,10 +199,6 @@
     </div>
 
 
-
-
-
-
     <!--futer-->
     
       <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 px-3 border-top sage">
@@ -213,25 +209,26 @@
         </a>
     
         <ul class="nav col-md-4 justify-content-end">
-          <li class="nav-item"><a href="#pocetna" class="nav-link px-2 text-body-secondary">Početna</a></li>
-          <li class="nav-item"><a href="#smjestaj" class="nav-link px-2 text-body-secondary">Smještaj</a></li>
-          <li class="nav-item"><a href="#kontakt" class="nav-link px-2 text-body-secondary">Kontakt</a></li>           
+          <li class="nav-item"><a href="#pocetna" class="nav-link px-2 text-body-secondary" id="nav-pocetna2">Početna</a></li>
+          <li class="nav-item"><a href="#smjestaj" class="nav-link px-2 text-body-secondary" id="nav-smjestaj2">Smještaj</a></li>
+          <li class="nav-item"><a href="#kontakt" class="nav-link px-2 text-body-secondary" id="nav-kontakt2">Kontakt</a></li>           
         </ul>
-        <p class="col-md-12 mb-0 text-body-secondary">Put proletera 3, 22000 Šibenik</p> 
+        <p class="col-md-12 mb-0 text-body-secondary">Put proletera 3, 22000 Šibenik, Croatia</p> 
       </footer>
     
     
 
     <script>
 
-      const engleski = {
-        "nazivVile" : "Villa Kadulja / Villa Sage",
+      const engleski = { 
+               
+"nazivVile" : "Villa Kadulja / Villa Sage",
 "karuselNaslov1" : "LUXURY VACATION VILLA",
 "karuselNaslov2" : "LUXURY VACATION VILLA",
 "karuselNaslov3" : "LUXURY VACATION VILLA",
-"karuselP1" : "DESIGNER VILLA WITH POOL IN ŠIBENIK",
-"karuselP2" : "DESIGNER VILLA WITH POOL IN ŠIBENIK",
-"karuselP3" : "DESIGNER VILLA WITH POOL IN ŠIBENIK",
+"karuselP1" : "DESIGNER VILLA WITH POOL IN ŠIBENIK, CROATIA",
+"karuselP2" : "DESIGNER VILLA WITH POOL IN ŠIBENIK, CROATIA",
+"karuselP3" : "DESIGNER VILLA WITH POOL IN ŠIBENIK, CROATIA",
 "h2prvi" : "MEDITERRANEAN ENVIRONMENT",
 "h2drugi" : "PRIVATE POOL",
 "infoP1" : "Vacation house, Villa Kadulja (Sage) was build in year 2023. set in peaceful area, in beautiful mediterranean environment, little coast place Brodarica near Šibenik.",
@@ -240,6 +237,15 @@
 "infoP4" : "Enjoy unique view at sea and near islands, especially beautiful and relaxing at night.",
 "infoP5" : "Private whirlpool with anti-current swimming, beautiful backyard with deck chairs and plenty of space for sunbathing and sunbathing, charcoal grill with bread oven, terrace with Dalmatian pergola under which you can gather and serve your grilled dishes and enjoy together. ",
 "infoP6" : "Spacious balconies also offer cozy places to hang out with a drink overlooking the sea or the nearby hills covered with pine trees and olive trees.",
+        "kontaktOsoba" : "Contact person: Mara Marić",
+        "kontaktNaslov" : "Contact",
+        "labelIme" : "First and last name",
+        "labelDrzava" : "Country",
+        "labelPhone" : "Phone Number",
+        "labelPoruka" : "Your Message",
+        "navPocetna" : "Home",
+        "navSmjestaj" : "Accommodation",
+        "navKontakt" : "Contact",
 };
 
 function promijeniEngleski() {
@@ -261,6 +267,19 @@ document.getElementById("info-par4").innerText = engleski.infoP4;
 document.getElementById("info-par5").innerText = engleski.infoP5;
 document.getElementById("info-par6").innerText = engleski.infoP6;
 
+document.getElementById("kontakt-osoba").innerText = engleski.kontaktOsoba;
+document.getElementById("kontakt-naslov").innerText = engleski.kontaktNaslov;
+document.getElementById("label-ime").innerText = engleski.labelIme;
+document.getElementById("label-drzava").innerText = engleski.labelDrzava;
+document.getElementById("label-telefon").innerText = engleski.labelPhone;
+document.getElementById("label-poruka").innerText = engleski.labelPoruka;
+
+document.getElementById("nav-pocetna").innerText = engleski.navPocetna;
+document.getElementById("nav-smjestaj").innerText = engleski.navSmjestaj;
+document.getElementById("nav-kontakt").innerText = engleski.navKontakt;
+document.getElementById("nav-pocetna2").innerText = engleski.navPocetna;
+document.getElementById("nav-smjestaj2").innerText = engleski.navSmjestaj;
+document.getElementById("nav-kontakt2").innerText = engleski.navKontakt;
 };
 
 const hrvatski = {
@@ -307,9 +326,9 @@ const njemacki = {
     "karuselNaslov1" : "LUXUS FERIENVILLA",
     "karuselNaslov2" : "LUXUS FERIENVILLA",
     "karuselNaslov3" : "LUXUS FERIENVILLA",
-    "karuselP1" : "DESIGNERVILLA MIT POOL AUF DER ŠIBENIK",
-    "karuselP2" : "DESIGNERVILLA MIT POOL AUF DER ŠIBENIK",
-    "karuselP3" : "DESIGNERVILLA MIT POOL AUF DER ŠIBENIK",
+    "karuselP1" : "DESIGNERVILLA MIT POOL AUF DER ŠIBENIK, KROATIEN",
+    "karuselP2" : "DESIGNERVILLA MIT POOL AUF DER ŠIBENIK, KROATIEN",
+    "karuselP3" : "DESIGNERVILLA MIT POOL AUF DER ŠIBENIK, KROATIEN",
     "h2prvi" : "MEDITERRANE UMGEBUNG",
     "h2drugi" : "PRIVATER POOL",
     "infoP1" : "Ferienhaus Villa Kadulja wurde im Jahr 2023 erbaut und befindet sich in einer ruhigen Umgebung, in einer wunderschönen mediterranen Umgebung, im Ort Brodarica in der Nähe von Šibenik.",
@@ -318,7 +337,15 @@ const njemacki = {
     "infoP4" : "Genießen Sie den einzigartigen Blick auf das Meer und die Inseln, der über Nacht ein besonderes Erlebnis bietet.",
     "infoP5" : "Privater Whirlpool mit Gegenstromschwimmen, schöner Garten mit Liegestühlen und viel Platz zum Sonnen und Sonnenbaden, Holzkohlegrill mit Brotbackofen, Terrasse mit dalmatinischer Pergola, unter der Sie Ihre Grillgerichte zusammenstellen und servieren und gemeinsam genießen können.",
     "infoP6" : "Geräumige Balkone bieten auch gemütliche Plätze zum Verweilen bei einem Drink mit Blick auf das Meer oder die nahe gelegenen Hügel mit Pinien- und Olivenbäumen.",
-
+    "kontaktOsoba" : "Kontaktperson: Mara Marić",
+"kontaktNaslov" : "Kontakt",
+"labelIme" : "Vor- und Nachname",
+"labelDrzava" : "Land",
+"labelPhone" : "Telefonnummer",
+"labelPoruka" : "Ihre Nachricht",
+"navPocetna" : "Startseite",
+"navSmjestaj" : "Unterkunft",
+"navKontakt" : "Kontakt"
 };
 
 function promijeniNjemacki() {
@@ -338,6 +365,20 @@ document.getElementById("info-par3").innerText = njemacki.infoP3;
 document.getElementById("info-par4").innerText = njemacki.infoP4;
 document.getElementById("info-par5").innerText = njemacki.infoP5;
 document.getElementById("info-par6").innerText = njemacki.infoP6;
+
+document.getElementById("kontakt-osoba").innerText = njemacki.kontaktOsoba;
+document.getElementById("kontakt-naslov").innerText = njemacki.kontaktNaslov;
+document.getElementById("label-ime").innerText = njemacki.labelIme;
+document.getElementById("label-drzava").innerText = njemacki.labelDrzava;
+document.getElementById("label-telefon").innerText = njemacki.labelPhone;
+document.getElementById("label-poruka").innerText = njemacki.labelPoruka;
+
+document.getElementById("nav-pocetna").innerText = njemacki.navPocetna;
+document.getElementById("nav-smjestaj").innerText = njemacki.navSmjestaj;
+document.getElementById("nav-kontakt").innerText = njemacki.navKontakt;
+document.getElementById("nav-pocetna2").innerText = njemacki.navPocetna;
+document.getElementById("nav-smjestaj2").innerText = njemacki.navSmjestaj;
+document.getElementById("nav-kontakt2").innerText = njemacki.navKontakt;
 };
 
 
@@ -346,9 +387,9 @@ const talijanski = {
     "karuselNaslov1" : "VILLA PER VACANZE DI LUSSO",
     "karuselNaslov2" : "VILLA PER VACANZE DI LUSSO",
     "karuselNaslov3" : "VILLA PER VACANZE DI LUSSO",
-    "karuselP1" : "VILLA DI DESIGN CON PISCINA A ŠIBENIK",
-    "karuselP2" : "VILLA DI DESIGN CON PISCINA A ŠIBENIK",
-    "karuselP3" : "VILLA DI DESIGN CON PISCINA A ŠIBENIK",
+    "karuselP1" : "VILLA DI DESIGN CON PISCINA A ŠIBENIK, CROAZIA",
+    "karuselP2" : "VILLA DI DESIGN CON PISCINA A ŠIBENIK, CROAZIA",
+    "karuselP3" : "VILLA DI DESIGN CON PISCINA A ŠIBENIK, CROAZIA",
     "h2prvi" : "AMBIENTE MEDITERRANEO",
     "h2drugi" : "PISCINA PRIVATA",
     "infoP1" : "La casa per le vacanze, Villa Kadulja (Salvia), è stata costruita nell'anno 2023. Situata in una zona tranquilla, in un bellissimo ambiente mediterraneo, nel piccolo posto costiero di Brodarica vicino a Šibenik.",
@@ -357,7 +398,15 @@ const talijanski = {
     "infoP4" : "Godetevi una vista unica sul mare e sulle isole vicine, particolarmente bella e rilassante di notte.",
     "infoP5" : "Idromassaggio privato con nuoto controcorrente, bellissimo cortile con sdraio e ampio spazio per prendere il sole, griglia a carbone con forno per il pane, terrazza con pergola dalmata sotto la quale potrete riunirvi e servire i vostri piatti alla griglia e gustare insieme.",
     "infoP6" : "Ampie balconate offrono anche luoghi accoglienti per rilassarsi con un drink ammirando il mare o le colline vicine coperte da pini e ulivi.",
-
+    "kontaktOsoba" : "Persona di contatto: Mara Marić",
+"kontaktNaslov" : "Contatto",
+"labelIme" : "Nome e cognome",
+"labelDrzava" : "Paese",
+"labelPhone" : "Numero di telefono",
+"labelPoruka" : "Il tuo messaggio",
+"navPocetna" : "Home",
+"navSmjestaj" : "Alloggio",
+"navKontakt" : "Contatto"
 };
 
 function promijeniTalijanski() {
@@ -378,6 +427,20 @@ document.getElementById("info-par4").innerText = talijanski.infoP4;
 document.getElementById("info-par5").innerText = talijanski.infoP5;
 document.getElementById("info-par6").innerText = talijanski.infoP6;
 
+document.getElementById("kontakt-osoba").innerText = talijanski.kontaktOsoba;
+document.getElementById("kontakt-naslov").innerText = talijanski.kontaktNaslov;
+document.getElementById("label-ime").innerText = talijanski.labelIme;
+document.getElementById("label-drzava").innerText = talijanski.labelDrzava;
+document.getElementById("label-telefon").innerText = talijanski.labelPhone;
+document.getElementById("label-poruka").innerText = talijanski.labelPoruka;
+
+document.getElementById("nav-pocetna").innerText = talijanski.navPocetna;
+document.getElementById("nav-smjestaj").innerText = talijanski.navSmjestaj;
+document.getElementById("nav-kontakt").innerText = talijanski.navKontakt;
+document.getElementById("nav-pocetna2").innerText = talijanski.navPocetna;
+document.getElementById("nav-smjestaj2").innerText = talijanski.navSmjestaj;
+document.getElementById("nav-kontakt2").innerText = talijanski.navKontakt;
+
 };
 
 
@@ -386,9 +449,9 @@ const francuski = {
     "karuselNaslov1" : "VILLA DE VACANCES DE LUXE",
     "karuselNaslov2" : "VILLA DE VACANCES DE LUXE",
     "karuselNaslov3" : "VILLA DE VACANCES DE LUXE",
-    "karuselP1" : "VILLA DESIGN AVEC PISCINE À ŠIBENIK",
-    "karuselP2" : "VILLA DESIGN AVEC PISCINE À ŠIBENIK",
-    "karuselP3" : "VILLA DESIGN AVEC PISCINE À ŠIBENIK",
+    "karuselP1" : "VILLA DESIGN AVEC PISCINE À ŠIBENIK, CROATIE",
+    "karuselP2" : "VILLA DESIGN AVEC PISCINE À ŠIBENIK, CROATIE",
+    "karuselP3" : "VILLA DESIGN AVEC PISCINE À ŠIBENIK, CROATIE",
     "h2prvi" : "ENVIRONNEMENT MÉDITERRANÉEN",
     "h2drugi" : "PISCINE PRIVÉE",
     "infoP1" : "La maison de vacances, Villa Kadulja (Sage), a été construite en 2023. Elle est située dans une zone paisible, dans un magnifique environnement méditerranéen, dans le petit village côtier de Brodarica près de Šibenik.",
@@ -397,7 +460,15 @@ const francuski = {
     "infoP4" : "Profitez d'une vue unique sur la mer et les îles voisines, particulièrement belle et relaxante la nuit.",
     "infoP5" : "Jacuzzi privé avec nage à contre-courant, magnifique arrière-cour avec chaises longues et beaucoup d'espace pour prendre le soleil, barbecue au charbon de bois avec four à pain, terrasse avec pergola dalmate sous laquelle vous pouvez vous réunir, servir vos plats grillés et profiter ensemble",
     "infoP6" : "Les balcons spacieux offrent également des endroits confortables pour se détendre avec un verre en admirant la mer ou les collines voisines couvertes de pins et d'oliviers.",
-
+    "kontaktOsoba" : "Personne de contact: Mara Marić",
+"kontaktNaslov" : "Contact",
+"labelIme" : "Prénom et nom de famille",
+"labelDrzava" : "Pays",
+"labelPhone" : "Numéro de téléphone",
+"labelPoruka" : "Votre message",
+"navPocetna" : "Accueil",
+"navSmjestaj" : "Hébergement",
+"navKontakt" : "Contact"
 };
 
 function promijeniFrancuski() {
@@ -417,6 +488,20 @@ document.getElementById("info-par3").innerText = francuski.infoP3;
 document.getElementById("info-par4").innerText = francuski.infoP4;
 document.getElementById("info-par5").innerText = francuski.infoP5;
 document.getElementById("info-par6").innerText = francuski.infoP6;
+
+document.getElementById("kontakt-osoba").innerText = francuski.kontaktOsoba;
+document.getElementById("kontakt-naslov").innerText = francuski.kontaktNaslov;
+document.getElementById("label-ime").innerText = francuski.labelIme;
+document.getElementById("label-drzava").innerText = francuski.labelDrzava;
+document.getElementById("label-telefon").innerText = francuski.labelPhone;
+document.getElementById("label-poruka").innerText = francuski.labelPoruka;
+
+document.getElementById("nav-pocetna").innerText = francuski.navPocetna;
+document.getElementById("nav-smjestaj").innerText = francuski.navSmjestaj;
+document.getElementById("nav-kontakt").innerText = francuski.navKontakt;
+document.getElementById("nav-pocetna2").innerText = francuski.navPocetna;
+document.getElementById("nav-smjestaj2").innerText = francuski.navSmjestaj;
+document.getElementById("nav-kontakt2").innerText = francuski.navKontakt;
 
 };
 
