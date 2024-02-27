@@ -6,64 +6,34 @@
     <title>Villa Kadulja</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-     
-    <!--
-    <script>
-      function fetchHtml() {
-        fetch ("/body.html")
-        .then ((response) => {
-          return response.text();
-        })        
-        .then ((html) => {
-          document.body.innerHTML = html
-        });
-      };
-      fetchHtml();
-    </script>
-    <script>
-      window.addEventListener("DOMContentLoaded", (event) => {
-        let getLang = document.getElementById("language").getAttribute("lang");
-        const script = document.createElement("script");
-        if(getLang == "en") {
-          //remote file
-          script.setAttribute ("src", "en.js");
-        }
-        else if (getLang == "hr") {
-          script.setAttribute ("src", "hr.js");
-        }
-        else if (getLang == "it") {
-          script.setAttribute ("src", "it.js");
-        }
-        document.head.appendChild(script);
-      })
-    </script>
-
-    -->
     
-    <!-- U  HTMLU,CSS, JS IZRADITE WEB STRANICU ZA NEKU VILLU -->
-    <!-- MOŽETE KORISTIT FRAMEWORK PO ŽELJI -->
-    <!-- NAKON ŠTO STE SVE LIJEPO NAPRAVILI <BODY>, PREBACITE GA U body.html -->
-
-    <!-- UNESITE VAŠ STYLE.CSS FILE -->
-    <link rel="stylesheet" href="xxx.css">
     <style>
       .sage {background-color:	#9ebd9e;}
     </style> 
 
   </head>
 
-  <nav class="py-2 border-bottom sage">
+  <nav class="py-2 border-bottom sage" id="pocetna">
     <div class="container d-flex flex-wrap">
       <ul class="nav me-auto">
-        <li class="nav-item"><a href="#" class="nav-link link-body-emphasis px-2 active" aria-current="page">Home</a></li>
-        <li class="nav-item"><a href="#" class="nav-link link-body-emphasis px-2">Features</a></li>
-        <li class="nav-item"><a href="#" class="nav-link link-body-emphasis px-2">Pricing</a></li>
-        <li class="nav-item"><a href="#" class="nav-link link-body-emphasis px-2">FAQs</a></li>
-        <li class="nav-item"><a href="#" class="nav-link link-body-emphasis px-2">About</a></li>
+        <li class="nav-item"><a href="#pocetna" class="nav-link link-body-emphasis px-2 active" aria-current="page">Početna</a></li>
+        <li class="nav-item"><a href="#smjestaj" class="nav-link link-body-emphasis px-2">Smještaj</a></li>
+        <li class="nav-item"><a href="#kontakt" class="nav-link link-body-emphasis px-2">Kontakt</a></li>        
       </ul>
       <ul class="nav">
-        <li class="nav-item"><a href="#" class="nav-link link-body-emphasis px-2">Login</a></li>
-        <li class="nav-item"><a href="#" class="nav-link link-body-emphasis px-2">Sign up</a></li>
+        <li class="nav-item">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-envelope-at" viewBox="0 0 16 16">
+            <path d="M2 2a2 2 0 0 0-2 2v8.01A2 2 0 0 0 2 14h5.5a.5.5 0 0 0 0-1H2a1 1 0 0 1-.966-.741l5.64-3.471L8 9.583l7-4.2V8.5a.5.5 0 0 0 1 0V4a2 2 0 0 0-2-2zm3.708 6.208L1 11.105V5.383zM1 4.217V4a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v.217l-7 4.2z"/>
+            <path d="M14.247 14.269c1.01 0 1.587-.857 1.587-2.025v-.21C15.834 10.43 14.64 9 12.52 9h-.035C10.42 9 9 10.36 9 12.432v.214C9 14.82 10.438 16 12.358 16h.044c.594 0 1.018-.074 1.237-.175v-.73c-.245.11-.673.18-1.18.18h-.044c-1.334 0-2.571-.788-2.571-2.655v-.157c0-1.657 1.058-2.724 2.64-2.724h.04c1.535 0 2.484 1.05 2.484 2.326v.118c0 .975-.324 1.39-.639 1.39-.232 0-.41-.148-.41-.42v-2.19h-.906v.569h-.03c-.084-.298-.368-.63-.954-.63-.778 0-1.259.555-1.259 1.4v.528c0 .892.49 1.434 1.26 1.434.471 0 .896-.227 1.014-.643h.043c.118.42.617.648 1.12.648m-2.453-1.588v-.227c0-.546.227-.791.573-.791.297 0 .572.192.572.708v.367c0 .573-.253.744-.564.744-.354 0-.581-.215-.581-.8Z"/>
+          </svg>
+          <a href="mailto:vila-kadulja@gmail.com" class="text-decoration-none" target="_blank" title="Mail to: vila-kadulja@gmail.com">
+          <span class="email px-2 text-dark " data-email="vila-kadulja@gmail.com">vila-kadulja@gmail.com</span></a></li>
+        <li class="nav-item">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-telephone-forward" viewBox="0 0 16 16">
+            <path d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.6 17.6 0 0 0 4.168 6.608 17.6 17.6 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.68.68 0 0 0-.58-.122l-2.19.547a1.75 1.75 0 0 1-1.657-.459L5.482 8.062a1.75 1.75 0 0 1-.46-1.657l.548-2.19a.68.68 0 0 0-.122-.58zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.68.68 0 0 0 .178.643l2.457 2.457a.68.68 0 0 0 .644.178l2.189-.547a1.75 1.75 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.6 18.6 0 0 1-7.01-4.42 18.6 18.6 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877zm10.762.135a.5.5 0 0 1 .708 0l2.5 2.5a.5.5 0 0 1 0 .708l-2.5 2.5a.5.5 0 0 1-.708-.708L14.293 4H9.5a.5.5 0 0 1 0-1h4.793l-1.647-1.646a.5.5 0 0 1 0-.708"/>
+          </svg>
+          <a href="tel:+385912345678" class="text-decoration-none" target="_blank" title="Phone Villa Kadulja: Croatia +385">
+          <span class="phone px-2 text-dark " data-phone="+385912345678">+385912345678</span></a></li>
       </ul>
     </div>
   </nav>
@@ -78,8 +48,11 @@
           Jezik / Language 
         </button>
         <ul class="dropdown-menu">
-          <li onclick="promijeniHrvatski()"><a class="dropdown-item" href="#">Hr</a></li>
-          <li onclick="promijeniEngleski()"><a class="dropdown-item" href="#">En</a></li>          
+          <li onclick="promijeniHrvatski()"><a class="dropdown-item" href="#"><img src="slike za vilu/flag-for-flag-croatia-svgrepo-com.svg" alt="zastava Hr">  Hrvatski</a></li>
+          <li onclick="promijeniEngleski()"><a class="dropdown-item" href="#"><img src="slike za vilu/flag-for-flag-united-kingdom-svgrepo-com.svg" alt="zastava UK">  English</a></li>
+          <li onclick="promijeniNjemacki()"><a class="dropdown-item" href="#"><img src="slike za vilu/flag-for-flag-germany-svgrepo-com.svg" alt="zastava De">  Deutsch</a></li>
+          <li onclick="promijeniTalijanski()"><a class="dropdown-item" href="#"><img src="slike za vilu/flag-for-flag-italy-svgrepo-com.svg" alt="zastava It">  Italiano</a></li>
+          <li onclick="promijeniFrancuski()"><a class="dropdown-item" href="#"><img src="slike za vilu/flag-for-flag-france-svgrepo-com.svg" alt="zastava Fr">  Français</a></li>       
         </ul>
       </div>
     </div>
@@ -125,7 +98,7 @@
     </div>
 
     <div class="container">
-      <div class="row mt-3 pt-3 mb-3 pt-3">
+      <div class="row mt-3 pt-3 mb-3 pt-3" id="smjestaj">
         <div class="col-md-6">
           <img class="img img-fluid rounded" src="./slike za vilu/vila izbliza.jpg" alt="">
         </div>
@@ -163,6 +136,74 @@
       </div>
     </div>
 
+    <!--KONTAKT-->
+
+    <div class="container">
+      <div class="row mt-3 pt-3 mb-3 pt-3" id="kontakt">
+        <div class="col-md-6 ">
+          <h2>VILA KADULJA</h2>
+          <p>
+            Put proletera 3, Brodarica  
+          </p>
+          <p>
+            22000 Šibenik
+          </p>
+          <p>
+            <a href="tel:+385912345678" class="text-decoration-none" target="_blank" title="Phone Villa Kadulja: Croatia +385">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="black" class="bi bi-telephone-forward" viewBox="0 0 16 16">
+                <path d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.6 17.6 0 0 0 4.168 6.608 17.6 17.6 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.68.68 0 0 0-.58-.122l-2.19.547a1.75 1.75 0 0 1-1.657-.459L5.482 8.062a1.75 1.75 0 0 1-.46-1.657l.548-2.19a.68.68 0 0 0-.122-.58zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.68.68 0 0 0 .178.643l2.457 2.457a.68.68 0 0 0 .644.178l2.189-.547a1.75 1.75 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.6 18.6 0 0 1-7.01-4.42 18.6 18.6 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877zm10.762.135a.5.5 0 0 1 .708 0l2.5 2.5a.5.5 0 0 1 0 .708l-2.5 2.5a.5.5 0 0 1-.708-.708L14.293 4H9.5a.5.5 0 0 1 0-1h4.793l-1.647-1.646a.5.5 0 0 1 0-.708"/>
+              </svg>
+              <span class="phone px-2 text-dark " data-phone="+385912345678">+385912345678</span></a>
+          </p>          
+          <p id="kontakt-par4">
+            <a href="mailto:vila-kadulja@gmail.com" class="text-decoration-none" target="_blank" title="Mail to: vila-kadulja@gmail.com">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="black" class="bi bi-envelope-at" viewBox="0 0 16 16">
+              <path d="M2 2a2 2 0 0 0-2 2v8.01A2 2 0 0 0 2 14h5.5a.5.5 0 0 0 0-1H2a1 1 0 0 1-.966-.741l5.64-3.471L8 9.583l7-4.2V8.5a.5.5 0 0 0 1 0V4a2 2 0 0 0-2-2zm3.708 6.208L1 11.105V5.383zM1 4.217V4a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v.217l-7 4.2z"/>
+              <path d="M14.247 14.269c1.01 0 1.587-.857 1.587-2.025v-.21C15.834 10.43 14.64 9 12.52 9h-.035C10.42 9 9 10.36 9 12.432v.214C9 14.82 10.438 16 12.358 16h.044c.594 0 1.018-.074 1.237-.175v-.73c-.245.11-.673.18-1.18.18h-.044c-1.334 0-2.571-.788-2.571-2.655v-.157c0-1.657 1.058-2.724 2.64-2.724h.04c1.535 0 2.484 1.05 2.484 2.326v.118c0 .975-.324 1.39-.639 1.39-.232 0-.41-.148-.41-.42v-2.19h-.906v.569h-.03c-.084-.298-.368-.63-.954-.63-.778 0-1.259.555-1.259 1.4v.528c0 .892.49 1.434 1.26 1.434.471 0 .896-.227 1.014-.643h.043c.118.42.617.648 1.12.648m-2.453-1.588v-.227c0-.546.227-.791.573-.791.297 0 .572.192.572.708v.367c0 .573-.253.744-.564.744-.354 0-.581-.215-.581-.8Z"/>
+            </svg>            
+              <span class="email px-2 text-dark " data-email="vila-kadulja@gmail.com">vila-kadulja@gmail.com</span>
+            </a>
+          </p>
+          <p id="kontakt-osoba">
+            Kontakt osoba: Mara Marić
+          </p>
+            
+        </div>
+        <div class="col-md-6 bg-light">
+          <h2 id="kontakt-naslov">KONTAKT</h2>
+          <div class="row">
+          <div class="col-md-6 mb-3">
+            <label for="exampleFormControlInput1" class="form-label" id="label-ime">Ime i prezime</label>
+            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="">
+          </div>
+          <div class="col-md-6 mb-3">
+            <label for="exampleFormControlInput1" class="form-label" id="label-drzava">Država</label>
+            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="">
+          </div>
+          <div class="col-md-6 mb-3">
+            <label for="exampleFormControlInput1" class="form-label" id="label-telefon">Telefon</label>
+            <input type="phone" class="form-control" id="exampleFormControlInput1" placeholder="">
+          </div>
+          <div class="col-md-6 mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Email</label>
+            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="">
+          </div>
+        </div>
+          <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label" id="label-poruka">Poruka</label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+          </div>
+          <input class="btn btn-secondary" type="submit" value="Submit">          
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+
+    <!--futer-->
     
       <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 px-3 border-top sage">
         <p class="col-md-4 mb-0 text-body-secondary">© 2024 Vila Kadulja</p>         
@@ -172,11 +213,9 @@
         </a>
     
         <ul class="nav col-md-4 justify-content-end">
-          <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Home</a></li>
-          <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Features</a></li>
-          <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Pricing</a></li>
-          <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">FAQs</a></li>
-          <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">About</a></li>
+          <li class="nav-item"><a href="#pocetna" class="nav-link px-2 text-body-secondary">Početna</a></li>
+          <li class="nav-item"><a href="#smjestaj" class="nav-link px-2 text-body-secondary">Smještaj</a></li>
+          <li class="nav-item"><a href="#kontakt" class="nav-link px-2 text-body-secondary">Kontakt</a></li>           
         </ul>
         <p class="col-md-12 mb-0 text-body-secondary">Put proletera 3, 22000 Šibenik</p> 
       </footer>
@@ -186,7 +225,7 @@
     <script>
 
       const engleski = {
-        "nazivVile" : "Villa Kadulja / Sage",
+        "nazivVile" : "Villa Kadulja / Villa Sage",
 "karuselNaslov1" : "LUXURY VACATION VILLA",
 "karuselNaslov2" : "LUXURY VACATION VILLA",
 "karuselNaslov3" : "LUXURY VACATION VILLA",
@@ -235,7 +274,7 @@ const hrvatski = {
     "h2prvi" : "MEDITERANSKO OKRUŽENJE",
     "h2drugi" : "PRIVATNI BAZEN",
     "infoP1" : "Kuća za odmor, Villa Kadulja građena je 2023. godine i nalazi se u mirnoj okolini, u prekrasnom mediteranskom okruženju, mjestu Brodarica kraj Šibenika.",
-    "infoP2" : "Villa je uređena dizajnerski te se svakim detaljom mislilo na zadovoljstvo boravka gostiju u njoj.",
+    "infoP2" : "Vila je uređena dizajnerski te se svakim detaljom mislilo na zadovoljstvo boravka gostiju u njoj.",
     "infoP3" : "Okruženi prirodom i maslinikom provest ćete godišnji odmor daleko od svakodnevnog stresa.",
     "infoP4" : "Uživajte u jedinstvenom pogledu na more i otoke koji preko noći pružaju poseban doživljaj.",
     "infoP5" : "Privatni hidromasažni bazen s protustrujnim plivanjem, prekrasno dvorište s ležaljkama i puno prostora za odmor i sunčanje, roštilj na ugljen s krušnom peći, terasa s dalmatinskom pergolom ispod koje ćete se skupiti i poslužiti svoja jela s roštilja i uživati u zajedničkom druženju. ",
@@ -260,6 +299,124 @@ document.getElementById("info-par3").innerText = hrvatski.infoP3;
 document.getElementById("info-par4").innerText = hrvatski.infoP4;
 document.getElementById("info-par5").innerText = hrvatski.infoP5;
 document.getElementById("info-par6").innerText = hrvatski.infoP6;
+
+};
+
+const njemacki = {
+  "nazivVile" : "Vila Kadulja / Villa Salbei",
+    "karuselNaslov1" : "LUXUS FERIENVILLA",
+    "karuselNaslov2" : "LUXUS FERIENVILLA",
+    "karuselNaslov3" : "LUXUS FERIENVILLA",
+    "karuselP1" : "DESIGNERVILLA MIT POOL AUF DER ŠIBENIK",
+    "karuselP2" : "DESIGNERVILLA MIT POOL AUF DER ŠIBENIK",
+    "karuselP3" : "DESIGNERVILLA MIT POOL AUF DER ŠIBENIK",
+    "h2prvi" : "MEDITERRANE UMGEBUNG",
+    "h2drugi" : "PRIVATER POOL",
+    "infoP1" : "Ferienhaus Villa Kadulja wurde im Jahr 2023 erbaut und befindet sich in einer ruhigen Umgebung, in einer wunderschönen mediterranen Umgebung, im Ort Brodarica in der Nähe von Šibenik.",
+    "infoP2" : "Das Innere der Villa ist geschmackvoll eingerichtet, wobei jedes Detail zur Zufriedenheit der Gäste gedacht wurde.",
+    "infoP3" : "Umgeben von Natur und Olivenhainen werden Sie Ihren Urlaub weit weg vom alltäglichen Stress verbringen.",
+    "infoP4" : "Genießen Sie den einzigartigen Blick auf das Meer und die Inseln, der über Nacht ein besonderes Erlebnis bietet.",
+    "infoP5" : "Privater Whirlpool mit Gegenstromschwimmen, schöner Garten mit Liegestühlen und viel Platz zum Sonnen und Sonnenbaden, Holzkohlegrill mit Brotbackofen, Terrasse mit dalmatinischer Pergola, unter der Sie Ihre Grillgerichte zusammenstellen und servieren und gemeinsam genießen können.",
+    "infoP6" : "Geräumige Balkone bieten auch gemütliche Plätze zum Verweilen bei einem Drink mit Blick auf das Meer oder die nahe gelegenen Hügel mit Pinien- und Olivenbäumen.",
+
+};
+
+function promijeniNjemacki() {
+// Postavljanje elemenata na temelju objekta hrvatski
+document.getElementById ("naziv-vile").innerText = njemacki.nazivVile;
+document.getElementById("karusel-naslov-prvi").innerText = njemacki.karuselNaslov1;
+document.getElementById("karusel-naslov-drugi").innerText = njemacki.karuselNaslov2;
+document.getElementById("karusel-naslov-treci").innerText = njemacki.karuselNaslov3;
+document.getElementById("karusel-par1").innerText = njemacki.karuselP1;
+document.getElementById("karusel-par2").innerText = njemacki.karuselP2;
+document.getElementById("karusel-par3").innerText = njemacki.karuselP3;
+document.getElementById("h2-prvi").innerText = njemacki.h2prvi;
+document.getElementById("h2-drugi").innerText = njemacki.h2drugi;
+document.getElementById("info-par1").innerText = njemacki.infoP1;
+document.getElementById("info-par2").innerText = njemacki.infoP2;
+document.getElementById("info-par3").innerText = njemacki.infoP3;
+document.getElementById("info-par4").innerText = njemacki.infoP4;
+document.getElementById("info-par5").innerText = njemacki.infoP5;
+document.getElementById("info-par6").innerText = njemacki.infoP6;
+};
+
+
+const talijanski = {
+  "nazivVile" : "Villa Kadulja / Villa Salvia",
+    "karuselNaslov1" : "VILLA PER VACANZE DI LUSSO",
+    "karuselNaslov2" : "VILLA PER VACANZE DI LUSSO",
+    "karuselNaslov3" : "VILLA PER VACANZE DI LUSSO",
+    "karuselP1" : "VILLA DI DESIGN CON PISCINA A ŠIBENIK",
+    "karuselP2" : "VILLA DI DESIGN CON PISCINA A ŠIBENIK",
+    "karuselP3" : "VILLA DI DESIGN CON PISCINA A ŠIBENIK",
+    "h2prvi" : "AMBIENTE MEDITERRANEO",
+    "h2drugi" : "PISCINA PRIVATA",
+    "infoP1" : "La casa per le vacanze, Villa Kadulja (Salvia), è stata costruita nell'anno 2023. Situata in una zona tranquilla, in un bellissimo ambiente mediterraneo, nel piccolo posto costiero di Brodarica vicino a Šibenik.",
+    "infoP2" : "L'interno della villa è arredato con gusto, dove ogni dettaglio è stato pensato per la soddisfazione degli ospiti.",
+    "infoP3" : "Circondati dalla natura e dagli ulivi, trascorrerete le vostre vacanze lontano dallo stress quotidiano.",
+    "infoP4" : "Godetevi una vista unica sul mare e sulle isole vicine, particolarmente bella e rilassante di notte.",
+    "infoP5" : "Idromassaggio privato con nuoto controcorrente, bellissimo cortile con sdraio e ampio spazio per prendere il sole, griglia a carbone con forno per il pane, terrazza con pergola dalmata sotto la quale potrete riunirvi e servire i vostri piatti alla griglia e gustare insieme.",
+    "infoP6" : "Ampie balconate offrono anche luoghi accoglienti per rilassarsi con un drink ammirando il mare o le colline vicine coperte da pini e ulivi.",
+
+};
+
+function promijeniTalijanski() {
+// Postavljanje elemenata na temelju objekta hrvatski
+document.getElementById ("naziv-vile").innerText = talijanski.nazivVile;
+document.getElementById("karusel-naslov-prvi").innerText = talijanski.karuselNaslov1;
+document.getElementById("karusel-naslov-drugi").innerText = talijanski.karuselNaslov2;
+document.getElementById("karusel-naslov-treci").innerText = talijanski.karuselNaslov3;
+document.getElementById("karusel-par1").innerText = talijanski.karuselP1;
+document.getElementById("karusel-par2").innerText = talijanski.karuselP2;
+document.getElementById("karusel-par3").innerText = talijanski.karuselP3;
+document.getElementById("h2-prvi").innerText = talijanski.h2prvi;
+document.getElementById("h2-drugi").innerText = talijanski.h2drugi;
+document.getElementById("info-par1").innerText = talijanski.infoP1;
+document.getElementById("info-par2").innerText = talijanski.infoP2;
+document.getElementById("info-par3").innerText = talijanski.infoP3;
+document.getElementById("info-par4").innerText = talijanski.infoP4;
+document.getElementById("info-par5").innerText = talijanski.infoP5;
+document.getElementById("info-par6").innerText = talijanski.infoP6;
+
+};
+
+
+const francuski = {
+  "nazivVile" : "Villa Kadulja / Villa Sage",
+    "karuselNaslov1" : "VILLA DE VACANCES DE LUXE",
+    "karuselNaslov2" : "VILLA DE VACANCES DE LUXE",
+    "karuselNaslov3" : "VILLA DE VACANCES DE LUXE",
+    "karuselP1" : "VILLA DESIGN AVEC PISCINE À ŠIBENIK",
+    "karuselP2" : "VILLA DESIGN AVEC PISCINE À ŠIBENIK",
+    "karuselP3" : "VILLA DESIGN AVEC PISCINE À ŠIBENIK",
+    "h2prvi" : "ENVIRONNEMENT MÉDITERRANÉEN",
+    "h2drugi" : "PISCINE PRIVÉE",
+    "infoP1" : "La maison de vacances, Villa Kadulja (Sage), a été construite en 2023. Elle est située dans une zone paisible, dans un magnifique environnement méditerranéen, dans le petit village côtier de Brodarica près de Šibenik.",
+    "infoP2" : "L'intérieur de la villa est décoré avec goût, où chaque détail a été pensé pour satisfaire les clients.",
+    "infoP3" : "Entourée par la nature et les oliviers, vous passerez vos vacances loin du stress quotidien.",
+    "infoP4" : "Profitez d'une vue unique sur la mer et les îles voisines, particulièrement belle et relaxante la nuit.",
+    "infoP5" : "Jacuzzi privé avec nage à contre-courant, magnifique arrière-cour avec chaises longues et beaucoup d'espace pour prendre le soleil, barbecue au charbon de bois avec four à pain, terrasse avec pergola dalmate sous laquelle vous pouvez vous réunir, servir vos plats grillés et profiter ensemble",
+    "infoP6" : "Les balcons spacieux offrent également des endroits confortables pour se détendre avec un verre en admirant la mer ou les collines voisines couvertes de pins et d'oliviers.",
+
+};
+
+function promijeniFrancuski() {
+// Postavljanje elemenata na temelju objekta hrvatski
+document.getElementById ("naziv-vile").innerText = francuski.nazivVile;
+document.getElementById("karusel-naslov-prvi").innerText = francuski.karuselNaslov1;
+document.getElementById("karusel-naslov-drugi").innerText = francuski.karuselNaslov2;
+document.getElementById("karusel-naslov-treci").innerText = francuski.karuselNaslov3;
+document.getElementById("karusel-par1").innerText = francuski.karuselP1;
+document.getElementById("karusel-par2").innerText = francuski.karuselP2;
+document.getElementById("karusel-par3").innerText = francuski.karuselP3;
+document.getElementById("h2-prvi").innerText = francuski.h2prvi;
+document.getElementById("h2-drugi").innerText = francuski.h2drugi;
+document.getElementById("info-par1").innerText = francuski.infoP1;
+document.getElementById("info-par2").innerText = francuski.infoP2;
+document.getElementById("info-par3").innerText = francuski.infoP3;
+document.getElementById("info-par4").innerText = francuski.infoP4;
+document.getElementById("info-par5").innerText = francuski.infoP5;
+document.getElementById("info-par6").innerText = francuski.infoP6;
 
 };
 
