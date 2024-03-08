@@ -11,6 +11,7 @@
         body {background-color:blanchedalmond;}
         .mail, .tel {transition: all 1s ease-in;}
         .mail:hover, .tel:hover {font-weight: bold;}
+        .nav-link {cursor: pointer;}
     </style>
     
     </head>
@@ -24,30 +25,43 @@
         </a>
         <hr>
         <ul class="nav nav-pills flex-column mb-auto">
-          <li class="nav-item">            
-            <a href="#" class="nav-link active bg-danger" aria-current="page">
+          <li class="nav-item" >            
+            <a href="#" class="nav-link active bg-danger" aria-current="page" id="top-link">
               <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#home"></use></svg>
-              Home
+              Početak
             </a>
           </li>
-          <li>
-            <a href="#about" class="nav-link text-white">
+          <li >
+            <a href="#about" class="nav-link text-white" id="about-link">
               <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#speedometer2"></use></svg>
-              O meni / About
+              O meni
             </a>
           </li>
-          <li>
-            <a href="#radovi" class="nav-link text-white">
+          <li >
+            <a href="#radovi" class="nav-link text-white" id="projekti-link">
               <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#table"></use></svg>
-              What I Do
+              Moji radovi
             </a>
           </li>          
           <li>
-            <a href="#kontakt" class="nav-link text-white">
+            <a href="#kontakt" class="nav-link text-white" id="contact-link">
               <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#people-circle"></use></svg>
               Kontakt
             </a>
-          </li>          
+          </li>
+          
+          <li>
+            <a class="nav-link text-white">
+              <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#people-circle"></use></svg>
+              <img src="./folder vila/slike za vilu/flag-for-flag-croatia-svgrepo-com.svg" onclick="changeCroatian()" alt="flag Croatia" title="Hrvatski">
+            </a>
+          </li>           
+          <li>
+            <a class="nav-link text-white">
+              <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#people-circle"></use></svg>
+              <img src="./folder vila/slike za vilu/flag-for-flag-united-kingdom-svgrepo-com.svg" onclick="changeEnglish()" alt="flag UK" title="English">
+            </a>
+          </li> 
         </ul>
         <hr>
         <div class="dropdown">
@@ -75,11 +89,11 @@
       <div class="col-md-6 banner">
       <div class="px-4 py-5 my-5 text-center">
         <img class="d-block mx-auto mb-4 rounded-circle w-50" src="slike-portfolio/naslovna-cvijece.jpg" alt="Wild flowers" title="Welcome">
-        <h1 class="display-5 fw-bold text-body-emphasis">Welcome</h1>
+        <h1 class="display-5 fw-bold text-body-emphasis" id="banner-naslov">Dobrodošli</h1>
         <div class="col-lg-6 mx-auto">
-            <p class="lead mb-4">I am Latica Škubonja</p>
-          <p class="lead mb-4">Full Stack Developer Trainee</p>
-          <p class="lead mb-4">based in Šibenik, Croatia</p>          
+            <p class="lead mb-4" id="banner-p1">Ja sam Latica Škubonja</p>
+          <p class="lead mb-4" id="banner-p2">Full Stack Developer pripravnica</p>
+          <p class="lead mb-4" id="banner-p3">živim u Šibeniku, Hrvatska</p>          
         </div>
       </div>
     </div>
@@ -92,7 +106,7 @@
 <!--red pod bannerom - radovi -->
 
 <div class="container text-center py-5 wow fadeInUp border-top border-dark" id="radovi" style="visibility: visible; animation-name: fadeInUp;">
-  <h1 class="display-6 my-other-font pb-4 mb-4">Moji radovi</h1> 
+  <h1 class="display-6 my-other-font pb-4 mb-4" id="radovi-naslov">Moji radovi</h1> 
 
   <div class="card-group mb-4">
     <div class="card mx-3">
@@ -101,11 +115,11 @@
       </a>
       <div class="card-body">
         <h5 class="card-title">WebShop ELegans</h5>
-        <p class="card-text">Primjer webshopa posvećenog prodaji odjeće za muškarce i žene</p>
-        <p class="card-text">HTML, CSS, JavaScript</p>
+        <p class="card-text" id="webshop-opis">Primjer webshopa posvećenog prodaji odjeće za muškarce i žene</p>
+        <p class="card-text">HTML, CSS</p>
       </div>
       <div class="card-footer bg-dark">
-        <a href="izrada-web-stranice-web-shop-v2-LaticaS/" target="_blank" class="btn btn-danger">Više</a>        
+        <a href="izrada-web-stranice-web-shop-v2-LaticaS/" target="_blank" class="btn btn-danger" id="str1">Stranica</a>        
       </div>
     </div>
     <div class="card">
@@ -113,12 +127,12 @@
       <img src="slike-portfolio/skrinšot Orah.jpg" class="card-img-top" alt="...">
       </a>
       <div class="card-body">
-        <h5 class="card-title">Drvodjeljstvo Orah</h5>
-        <p class="card-text">Stranica fiktivne obiteljske firme za izradu unutarnje i vanjske stolarije te namještaja</p>
+        <h5 class="card-title" id="orah-naslov">Drvodjeljstvo Orah</h5>
+        <p class="card-text" id="orah-opis">Stranica fiktivne obiteljske firme za izradu unutarnje i vanjske stolarije te namještaja</p>
         <p class="card-text">HTML, CSS</p>
       </div>
       <div class="card-footer bg-dark">
-        <a href="web-orah.html" target="_blank" class="btn btn-danger">Više</a>        
+        <a href="web-orah.html" target="_blank" class="btn btn-danger" id="str2">Stranica</a>        
       </div>
     </div>
     <div class="card mx-3">
@@ -126,12 +140,12 @@
       <img src="slike-portfolio/skrinšot Oblutak.jpg" class="card-img-top" alt="...">
       </a>
       <div class="card-body">
-        <h5 class="card-title">Ukrasni oblutak</h5>
-        <p class="card-text">Stranica za prodaju ukrasnih oblutaka za interijere i eksterijere</p>
+        <h5 class="card-title" id="oblutak-naslov">Ukrasni oblutak</h5>
+        <p class="card-text" id="oblutak-opis">Stranica za prodaju ukrasnih oblutaka za interijere i eksterijere</p>
         <p class="card-text">Bootstrap, CSS, JavaScript</p>
       </div>
       <div class="card-footer bg-dark">
-        <a href="oblutak.html" target="_blank" class="btn btn-danger">Više</a>        
+        <a href="oblutak.html" target="_blank" class="btn btn-danger" id="str3">Stranica</a>        
       </div>
     </div>
   </div>
@@ -144,12 +158,12 @@
       <img src="slike-portfolio/skrinšot Vremenska prognoza.jpg" class="card-img-top" alt="...">
       </a>
       <div class="card-body">
-        <h5 class="card-title">Vremenska prognoza app</h5>
-        <p class="card-text">Aplikacija za trenutnu vremensku prognozu svakog grada kojeg korisnik unese u tražilicu</p>
+        <h5 class="card-title" id="prognoza-naslov">Vremenska prognoza app</h5>
+        <p class="card-text" id="prognoza-opis">Aplikacija za trenutnu vremensku prognozu svakog grada kojeg korisnik unese u tražilicu</p>
         <p class="card-text">Bootstrap, CSS, API, JavaScript</p>
       </div>
       <div class="card-footer bg-dark">
-        <a href="vremenska-prognoza.html" target="_blank" class="btn btn-danger">Više</a>        
+        <a href="vremenska-prognoza.html" target="_blank" class="btn btn-danger" id="str4">Stranica</a>        
       </div>
     </div>
     <div class="card">
@@ -157,12 +171,12 @@
       <img src="slike-portfolio/skrinšot ToDo lista.jpg" class="card-img-top" alt="...">
       </a>
       <div class="card-body">
-        <h5 class="card-title">ToDo lista</h5>
-        <p class="card-text">Primjer to-do liste / malog online podsjetnika u kojega se mogu dodavati i brisati stavke koje ostaju zapamćene i po zatvaranju stranice</p>
+        <h5 class="card-title" id="todo-naslov">ToDo lista</h5>
+        <p class="card-text" id="todo-opis">Primjer to-do liste / malog online podsjetnika u kojega se mogu dodavati i brisati stavke koje ostaju zapamćene i po zatvaranju stranice</p>
         <p class="card-text">HTML, CSS, JavaScript</p>
       </div>
       <div class="card-footer bg-dark">
-        <a href="todo-lista-manja.html" target="_blank" class="btn btn-danger">Više</a>        
+        <a href="todo-lista-manja.html" target="_blank" class="btn btn-danger" id="str5">Stranica</a>        
       </div>
     </div>
     <div class="card mx-3">
@@ -170,13 +184,13 @@
       <img src="slike-portfolio/skrinšot kviz2.jpg" class="card-img-top" alt="...">
       </a>
       <div class="card-body">
-        <h5 class="card-title">Kvizovi</h5>
-        <p class="card-text">Zabavni online kvizovi raznih tema i formata koji prikazuju igračev broj točnih odgovora</p>
+        <h5 class="card-title" id="kvizovi-naslov">Kvizovi</h5>
+        <p class="card-text" id="kvizovi-opis">Zabavni online kvizovi raznih tema i formata koji prikazuju igračev broj točnih odgovora</p>
         <p class="card-text">HTML, CSS, JavaScript</p>
       </div>
       <div class="card-footer bg-dark">
-        <a href="kviz2.html" target="_blank" class="btn btn-danger">Više</a>
-        <a href="kviz1.html" target="_blank" class="btn btn-danger">Više</a>        
+        <a href="kviz2.html" target="_blank" class="btn btn-danger" id="str6">Stranica</a>
+        <a href="kviz1.html" target="_blank" class="btn btn-danger" id="str7">Stranica</a>        
       </div>
     </div>
   </div>
@@ -190,12 +204,12 @@
       <img src="slike-portfolio/skrinšot Vila Kadulja.jpg" class="card-img-top" alt="...">
       </a>
       <div class="card-body">
-        <h5 class="card-title">Vila Kadulja</h5>
-        <p class="card-text">Primjer uvodne stranice turističke vile za iznajmljivanje sa mogućnošću promjene nekoliko jezika</p>
+        <h5 class="card-title" id="vila-naslov">Vila Kadulja</h5>
+        <p class="card-text" id="vila-opis">Primjer uvodne stranice turističke vile za iznajmljivanje sa mogućnošću promjene nekoliko jezika</p>
         <p class="card-text">Bootstrap, CSS, JavaScript</p>
       </div>
       <div class="card-footer bg-dark">
-        <a href="folder vila/villa.html" target="_blank" class="btn btn-danger">Više</a>        
+        <a href="folder vila/villa.html" target="_blank" class="btn btn-danger" id="str8">Stranica</a>        
       </div>
     </div> 
   </div>
@@ -203,7 +217,7 @@
 </div>
 
 <div class="container  py-5 wow fadeInUp border-top border-dark" id="about" style="visibility: visible; animation-name: fadeInUp;">
-<h1 class="display-6 my-other-font pb-2 text-center">O meni / About</h1>
+<h1 class="display-6 my-other-font pb-2 text-center" id="about-naslov">O meni</h1>
 
 <div class="row">
 <div class="col-md-6 banner">
@@ -215,10 +229,10 @@
 <div class="col-md-6 text-left">
   <div class="px-4 py-4 my-4">
     <h3 class="fw-bold mb-4 pb-4 text-danger">Latica Škubonja</h3>           
-      <p class="lead mb-3">Trenutno: Full Stack Developer trainee / Trokut NEET 4.0 Akademija</p>
-      <p class="lead mb-3">Mjesto stanovanja: Šibenik, Hrvatska</p>
-      <p class="lead mb-3">Obrazovanje: </p>
-      <p class="lead mb-3">Učilište za poslovno upravljanje, Zagreb / Sveučilište u Zadru / Opća gimnazija Ploče</p>     
+      <p class="lead mb-3" id="about-p1">Trenutno: Full Stack Developer trainee / Trokut NEET 4.0 Akademija</p>
+      <p class="lead mb-3" id="about-p2">Mjesto stanovanja: Šibenik, Hrvatska</p>
+      <p class="lead mb-3" id="about-p3">Obrazovanje: </p>
+      <p class="lead mb-3" id="about-p4">Učilište za poslovno upravljanje, Zagreb / Sveučilište u Zadru / Opća gimnazija Ploče</p>     
     
   </div>
 </div>
@@ -233,7 +247,7 @@
 <div class="container  py-3 wow fadeInUp border-top border-dark" style="visibility: visible; animation-name: fadeInUp;">
 <div class="kontakt" id="kontakt" data-sr-id="7" style="visibility: visible; opacity: 1; transition: opacity 0.6s cubic-bezier(0.5, 0, 0, 1) 0s;">
   <div class="container text-center py-5 wow fadeInUp" style="visibility: visible; animation-name: fadeInUp;">
-      <h1 class="display-6 my-other-font pb-3 mb-3">Kontakt</h1>
+      <h1 class="display-6 my-other-font pb-3 mb-3" id="kontakt-naslov">Kontakt</h1>
       <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-phone-vibrate mb-3 text-danger" viewBox="0 0 16 16">
         <path d="M10 3a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1zM6 2a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h4a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2z"/>
         <path d="M8 12a1 1 0 1 0 0-2 1 1 0 0 0 0 2M1.599 4.058a.5.5 0 0 1 .208.676A7 7 0 0 0 1 8c0 1.18.292 2.292.807 3.266a.5.5 0 0 1-.884.468A8 8 0 0 1 0 8c0-1.347.334-2.619.923-3.734a.5.5 0 0 1 .676-.208m12.802 0a.5.5 0 0 1 .676.208A8 8 0 0 1 16 8a8 8 0 0 1-.923 3.734.5.5 0 0 1-.884-.468A7 7 0 0 0 15 8c0-1.18-.292-2.292-.807-3.266a.5.5 0 0 1 .208-.676M3.057 5.534a.5.5 0 0 1 .284.648A5 5 0 0 0 3 8c0 .642.12 1.255.34 1.818a.5.5 0 1 1-.93.364A6 6 0 0 1 2 8c0-.769.145-1.505.41-2.182a.5.5 0 0 1 .647-.284m9.886 0a.5.5 0 0 1 .648.284C13.855 6.495 14 7.231 14 8s-.145 1.505-.41 2.182a.5.5 0 0 1-.93-.364C12.88 9.255 13 8.642 13 8s-.12-1.255-.34-1.818a.5.5 0 0 1 .283-.648"/>
@@ -261,11 +275,180 @@
     <ul class="nav col-md-4 justify-content-end px-2">
       <li class="nav-item"><a href="#home" class="nav-link px-2 text-light">Home</a></li>      
       <li class="nav-item"><a href="#about" class="nav-link px-2 text-light">About</a></li>
-      <li class="nav-item"><a href="#radovi" class="nav-link px-2 text-light">Radovi</a></li>
-      <li class="nav-item"><a href="#kontakt" class="nav-link px-2 text-light">Kontakt</a></li>      
+      <li class="nav-item"><a href="#radovi" class="nav-link px-2 text-light">Projects</a></li>
+      <li class="nav-item"><a href="#kontakt" class="nav-link px-2 text-light">Contact</a></li>      
     </ul>
   </footer>
 
+
+
+  <script>
+    const engleski = { 
+               
+               "bannerNaslov" : "Welcome",
+               "bannerP1" : "I am Latica Škubonja",
+               "bannerP2" : "Full Stack Developer Trainee",
+               "bannerP3" : "based in Šibenik, Croatia",
+               "radoviNaslov" : "My projects",
+               "aboutNaslov" : "About",
+               "aboutP1" : "Currently: Full Stack Developer trainee / Trokut NEET 4.0 Academy",
+               "aboutP2" : "Residence: Šibenik, Croatia",
+               "aboutP3" : "Education:",
+               "aboutP4" : "Business Management College, Zagreb / University of Zadar / General Gymnasium Ploče",
+               
+               "kontaktNaslov" : "Contact",
+               "webshopOpis" : "Example of an online store dedicated to selling clothing for men and women",
+               "orahNaslov" : "Walnut Carpentry",
+               "orahOpis" : "A page of a fictional family company specializing in the production of interior and exterior carpentry as well as furniture ",
+                       
+               "oblutakNaslov" : "Decorative Pebble",
+                       "oblutakOpis" : "A page for selling decorative pebbles for interiors and exteriors",
+                       "prognozaNaslov" : "Weather Forecast App",
+                       "prognozaOpis" : "An application for the current weather forecast of any city entered by the user in the search bar",
+                       "todoNaslov" : "ToDo List",
+                       "todoOpis" : "An example of a to-do list / small online reminder where items can be added and deleted, remaining stored even after closing the page",
+                       "kvizoviNaslov" : "Quizzes",
+                       "kvizoviOpis" : "Fun online quizzes on various topics and formats that display the player's number of correct answers",
+                       "vilaNaslov" : "Villa Sage",
+                       "vilaOpis" : " An example of the introductory page of a tourist villa for rent with the option to switch between several languages",
+               
+                       "topLink" : "Top",
+                       "aboutLink" : "About",
+                       "projektiLink" : "My projects",
+                       "kontaktLink" : "Contact",
+                       "buttonStranica" : "Page"
+                      };
+               
+               function changeEnglish() {
+               
+               // Postavljanje elemenata na temelju objekta engleski
+               document.getElementById ("banner-naslov").innerText = engleski.bannerNaslov;
+               document.getElementById("banner-p1").innerText = engleski.bannerP1;
+               document.getElementById("banner-p2").innerText = engleski.bannerP2;
+               document.getElementById("banner-p3").innerText = engleski.bannerP3;
+               document.getElementById("radovi-naslov").innerText = engleski.radoviNaslov;
+               document.getElementById("about-naslov").innerText = engleski.aboutNaslov;
+               document.getElementById("about-p1").innerText = engleski.aboutP1;
+               document.getElementById("about-p2").innerText = engleski.aboutP2;
+               document.getElementById("about-p3").innerText = engleski.aboutP3;
+               document.getElementById("about-p4").innerText = engleski.aboutP4;
+               document.getElementById("webshop-opis").innerText = engleski.webshopOpis;
+               document.getElementById("orah-naslov").innerText = engleski.orahNaslov;
+               document.getElementById("orah-opis").innerText = engleski.orahOpis;
+
+               document.getElementById("oblutak-naslov").innerText = engleski.oblutakNaslov;
+               document.getElementById("oblutak-opis").innerText = engleski.oblutakOpis;
+               
+               document.getElementById("prognoza-naslov").innerText = engleski.prognozaNaslov;
+               document.getElementById("prognoza-opis").innerText = engleski.prognozaOpis;
+               document.getElementById("todo-naslov").innerText = engleski.todoNaslov;
+               document.getElementById("todo-opis").innerText = engleski.todoOpis;
+               document.getElementById("kvizovi-naslov").innerText = engleski.kvizoviNaslov;
+               document.getElementById("kvizovi-opis").innerText = engleski.kvizoviOpis;
+               
+               document.getElementById("vila-naslov").innerText = engleski.vilaNaslov;
+               document.getElementById("vila-opis").innerText = engleski.vilaOpis;
+
+               document.getElementById("kontakt-naslov").innerText = engleski.kontaktNaslov;
+
+               document.getElementById("top-link").innerText = engleski.topLink;
+               document.getElementById("about-link").innerText = engleski.aboutLink;
+               document.getElementById("projekti-link").innerText = engleski.projektiLink;
+               document.getElementById("contact-link").innerText = engleski.kontaktLink;
+               document.getElementById("str1").innerText = engleski.buttonStranica;
+               document.getElementById("str2").innerText = engleski.buttonStranica;
+               document.getElementById("str3").innerText = engleski.buttonStranica;
+               document.getElementById("str4").innerText = engleski.buttonStranica;
+               document.getElementById("str5").innerText = engleski.buttonStranica;
+               document.getElementById("str6").innerText = engleski.buttonStranica;
+               document.getElementById("str7").innerText = engleski.buttonStranica;
+               document.getElementById("str8").innerText = engleski.buttonStranica;
+               };
+
+
+               const hrvatski = { 
+               
+               "bannerNaslov" : "Dobrodošli",
+               "bannerP1" : "Ja sam Latica Škubonja",
+               "bannerP2" : "Full Stack Developer pripravnica",
+               "bannerP3" : "živim u Šibeniku, Hrvatska",
+               "radoviNaslov" : "Moji radovi",
+               "aboutNaslov" : "O meni",
+               "aboutP1" : "Trenutno: Full Stack Developer pripravnica / Trokut NEET 4.0 Akademija",
+               "aboutP2" : "Mjesto stanovanja: Šibenik, Hrvatska",
+               "aboutP3" : "Obrazovanje:",
+               "aboutP4" : "Učilište za poslovno upravljanje, Zagreb / Sveučilište u Zadru / Opća gimnazija Ploče",
+               
+               "kontaktNaslov" : "Kontakt",
+               "webshopOpis" : "Primjer webshopa posvećenog prodaji odjeće za muškarce i žene",
+               "orahNaslov" : "Drvodjeljstvo Orah",
+               "orahOpis" : "Stranica fiktivne obiteljske firme za izradu unutarnje i vanjske stolarije te namještaja",
+                       
+               "oblutakNaslov" : "Ukrasni Oblutak",
+                       "oblutakOpis" : "Stranica za prodaju ukrasnih oblutaka za interijere i eksterijere",
+                       "prognozaNaslov" : "Vremenska prognoza app",
+                       "prognozaOpis" : "Aplikacija za trenutnu vremensku prognozu svakog grada kojeg korisnik unese u tražilicu",
+                       "todoNaslov" : "ToDo Lista",
+                       "todoOpis" : "Primjer to-do liste / malog online podsjetnika u kojega se mogu dodavati i brisati stavke koje ostaju zapamćene i po zatvaranju stranice",
+                       "kvizoviNaslov" : "Kvizovi",
+                       "kvizoviOpis" : "Zabavni online kvizovi raznih tema i formata koji prikazuju igračev broj točnih odgovora",
+                       "vilaNaslov" : "Vila Kadulja",
+                       "vilaOpis" : "Primjer uvodne stranice turističke vile za iznajmljivanje sa mogućnošću promjene nekoliko jezika",
+               
+                       "topLink" : "Početak",
+                       "aboutLink" : "O meni",
+                       "projektiLink" : "Moji radovi",
+                       "kontaktLink" : "Kontakt",
+                       "buttonStranica" : "Stranica"
+                      };
+               
+               function changeCroatian() {
+               
+               // Postavljanje elemenata na temelju objekta engleski
+               document.getElementById ("banner-naslov").innerText = hrvatski.bannerNaslov;
+               document.getElementById("banner-p1").innerText = hrvatski.bannerP1;
+               document.getElementById("banner-p2").innerText = hrvatski.bannerP2;
+               document.getElementById("banner-p3").innerText = hrvatski.bannerP3;
+               document.getElementById("radovi-naslov").innerText = hrvatski.radoviNaslov;
+               document.getElementById("about-naslov").innerText = hrvatski.aboutNaslov;
+               document.getElementById("about-p1").innerText = hrvatski.aboutP1;
+               document.getElementById("about-p2").innerText = hrvatski.aboutP2;
+               document.getElementById("about-p3").innerText = hrvatski.aboutP3;
+               document.getElementById("about-p4").innerText = hrvatski.aboutP4;
+               document.getElementById("webshop-opis").innerText = hrvatski.webshopOpis;
+               document.getElementById("orah-naslov").innerText = hrvatski.orahNaslov;
+               document.getElementById("orah-opis").innerText = hrvatski.orahOpis;
+
+               document.getElementById("oblutak-naslov").innerText = hrvatski.oblutakNaslov;
+               document.getElementById("oblutak-opis").innerText = hrvatski.oblutakOpis;
+               
+               document.getElementById("prognoza-naslov").innerText = hrvatski.prognozaNaslov;
+               document.getElementById("prognoza-opis").innerText = hrvatski.prognozaOpis;
+               document.getElementById("todo-naslov").innerText = hrvatski.todoNaslov;
+               document.getElementById("todo-opis").innerText = hrvatski.todoOpis;
+               document.getElementById("kvizovi-naslov").innerText = hrvatski.kvizoviNaslov;
+               document.getElementById("kvizovi-opis").innerText = hrvatski.kvizoviOpis;
+               
+               document.getElementById("vila-naslov").innerText = hrvatski.vilaNaslov;
+               document.getElementById("vila-opis").innerText = hrvatski.vilaOpis;
+
+               document.getElementById("kontakt-naslov").innerText = hrvatski.kontaktNaslov;
+
+               document.getElementById("top-link").innerText = hrvatski.topLink;
+               document.getElementById("about-link").innerText = hrvatski.aboutLink;
+               document.getElementById("projekti-link").innerText = hrvatski.projektiLink;
+               document.getElementById("contact-link").innerText = hrvatski.kontaktLink;
+               document.getElementById("str1").innerText = hrvatski.buttonStranica;
+               document.getElementById("str2").innerText = hrvatski.buttonStranica;
+               document.getElementById("str3").innerText = hrvatski.buttonStranica;
+               document.getElementById("str4").innerText = hrvatski.buttonStranica;
+               document.getElementById("str5").innerText = hrvatski.buttonStranica;
+               document.getElementById("str6").innerText = hrvatski.buttonStranica;
+               document.getElementById("str7").innerText = hrvatski.buttonStranica;
+               document.getElementById("str8").innerText = hrvatski.buttonStranica;
+               };
+
+  </script>
 
     
 </body>
