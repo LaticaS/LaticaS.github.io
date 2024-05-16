@@ -94,7 +94,7 @@
         <h1 class="display-5 fw-bold text-body-emphasis" id="banner-naslov">Dobrodošli</h1>
         <div class="col-lg-6 mx-auto">
             <p class="lead mb-4" id="banner-p1">Ja sam Latica Škubonja</p>
-          <p class="lead mb-4" id="banner-p2">Full Stack Developer učenica</p>
+          <p class="lead mb-4" id="banner-p2">Full Stack Developer student</p>
           <p class="lead mb-4" id="banner-p3">živim u Šibeniku, Hrvatska</p>          
         </div>
       </div>
@@ -156,7 +156,7 @@
 
   <div class="card-group">
     <div class="card mx-3">
-      <a href="vremenska-prognoza.html" target="_blank" title="Vremenska prognoza">
+      <a href="boot-prognoza.html" target="_blank" title="Vremenska prognoza">
       <img src="slike-portfolio/skrinšot Vremenska prognoza.jpg" class="card-img-top" alt="...">
       </a>
       <div class="card-body">
@@ -165,7 +165,7 @@
         <p class="card-text">Bootstrap, CSS, API, JavaScript</p>
       </div>
       <div class="card-footer bg-dark">
-        <a href="vremenska-prognoza.html" target="_blank" class="btn btn-danger" id="str4">Stranica</a>        
+        <a href="boot-prognoza.html" target="_blank" class="btn btn-danger" id="str4">Stranica</a>        
       </div>
     </div>
     <div class="card">
@@ -200,7 +200,7 @@
 
   <!--treći red radova-->
 
-  <div class="card-group my-3 col-md-4">
+  <div class="card-group my-4 ">
     <div class="card mx-3">
       <a href="folder vila/villa.html" target="_blank" title="Vila Kadulja">
       <img src="slike-portfolio/skrinšot Vila Kadulja.jpg" class="card-img-top" alt="...">
@@ -213,8 +213,38 @@
       <div class="card-footer bg-dark">
         <a href="folder vila/villa.html" target="_blank" class="btn btn-danger" id="str8">Stranica</a>        
       </div>
-    </div> 
-  </div>
+    </div>
+
+    <div class="card">
+      <a href="https://my-react-web-shop.vercel.app/" target="_blank" title="Webshop knjižara Booki">
+      <img src="slike-portfolio\Booki Webshop.jpg" class="card-img-top" alt="...">
+      </a>
+      <div class="card-body">
+        <h5 class="card-title" id="knjizara-naslov">Web knjižara Booki</h5>
+        <p class="card-text" id="knjizara-opis">Primjer webshop knjižare napravljen u Reactu, sa funkcionalnom košaricom, search barom, filtriranjem po kategorijama, detaljnim pregledom proizvoda, newsletterom i zapisom podataka narudžbe</p>
+        <p class="card-text">React, JSX, SCSS</p>
+      </div>
+      <div class="card-footer bg-dark">
+        <a href="https://my-react-web-shop.vercel.app/" target="_blank" class="btn btn-danger" id="str9">Stranica</a>        
+      </div>
+    </div>
+
+    <div class="card mx-3">
+      <a href="" target="_blank" title="AppList App">
+      <img src="slike-portfolio\skrinšot lista aplikacija.jpg" class="card-img-top" alt="...">
+      </a>
+      <div class="card-body">
+        <h5 class="card-title" id="aplikacije-naslov">Environment App List</h5>
+        <p class="card-text" id="aplikacije-opis">Work in progress: app list tablica sa dropdown selectom environmenta i detaljnim prikazom pojedinačnih app performansi</p>
+        <p class="card-text">React, Ant Design, JSX, SCSS</p>
+      </div>
+      <div class="card-footer bg-dark">
+       <!-- <a href="" target="_blank" class="btn btn-danger" id="str10">Stranica</a>   -->            
+      </div>
+    </div>
+  </div> 
+
+  <!--4ti red?-->
 
 </div>
 
@@ -231,7 +261,7 @@
 <div class="col-md-6 text-left">
   <div class="px-4 py-4 my-4">
     <h3 class="fw-bold mb-4 pb-4 text-danger">Latica Škubonja</h3>           
-      <p class="lead mb-3" id="about-p1">Trenutno: Full Stack Developer trainee / Trokut NEET 4.0 Akademija</p>
+      <p class="lead mb-3" id="about-p1">Trenutno: Full Stack Developer student / Trokut NEET 4.0 Akademija</p>
       <p class="lead mb-3" id="about-p2">Mjesto stanovanja: Šibenik, Hrvatska</p>
       <p class="lead mb-3" id="about-p3">Obrazovanje: </p>
       <p class="lead mb-3" id="about-p4">Učilište za poslovno upravljanje, Zagreb / Sveučilište u Zadru / Opća gimnazija Ploče</p>     
@@ -313,6 +343,8 @@
                        "kvizoviOpis" : "Fun online quizzes on various topics and formats that display the player's number of correct answers",
                        "vilaNaslov" : "Villa Sage",
                        "vilaOpis" : " An example of the introductory page of a tourist villa for rent with the option to switch between several languages",
+                       "knjizaraNaslov" : "Webshop bookstore Booki",
+                       "knjizaraOpis" : "An example of a webshop bookstore made in React, with a functional shopping cart, search bar, category filtering, detailed product view, newsletter, and order data logging",
                
                        "topLink" : "Top",
                        "aboutLink" : "About",
@@ -351,6 +383,9 @@
                document.getElementById("vila-naslov").innerText = engleski.vilaNaslov;
                document.getElementById("vila-opis").innerText = engleski.vilaOpis;
 
+               document.getElementById("knjizara-naslov").innerText = engleski.knjizaraNaslov;
+               document.getElementById("knjizara-opis").innerText = engleski.knjizaraOpis;
+
                document.getElementById("kontakt-naslov").innerText = engleski.kontaktNaslov;
 
                document.getElementById("top-link").innerText = engleski.topLink;
@@ -365,6 +400,7 @@
                document.getElementById("str6").innerText = engleski.buttonStranica;
                document.getElementById("str7").innerText = engleski.buttonStranica;
                document.getElementById("str8").innerText = engleski.buttonStranica;
+               document.getElementById("str9").innerText = engleski.buttonStranica;
                };
 
 
@@ -372,11 +408,11 @@
 
                "bannerNaslov" : "Dobrodošli",
                "bannerP1" : "Ja sam Latica Škubonja",
-               "bannerP2" : "Full Stack Developer učenica",
+               "bannerP2" : "Full Stack Developer student",
                "bannerP3" : "živim u Šibeniku, Hrvatska",
                "radoviNaslov" : "Moji radovi",
                "aboutNaslov" : "O meni",
-               "aboutP1" : "Trenutno: Full Stack Developer učenica / Trokut NEET 4.0 Akademija",
+               "aboutP1" : "Trenutno: Full Stack Developer student / Trokut NEET 4.0 Akademija",
                "aboutP2" : "Mjesto stanovanja: Šibenik, Hrvatska",
                "aboutP3" : "Obrazovanje:",
                "aboutP4" : "Učilište za poslovno upravljanje, Zagreb / Sveučilište u Zadru / Opća gimnazija Ploče",
@@ -396,6 +432,8 @@
                        "kvizoviOpis" : "Zabavni online kvizovi raznih tema i formata koji prikazuju igračev broj točnih odgovora",
                        "vilaNaslov" : "Vila Kadulja",
                        "vilaOpis" : "Primjer uvodne stranice turističke vile za iznajmljivanje sa mogućnošću promjene nekoliko jezika",
+                       "knjizaraNaslov" : "Web knjižara Booki",
+                       "knjizaraOpis" : "Primjer webshop knjižare napravljen u Reactu, sa funkcionalnom košaricom, search barom, filtriranjem po kategorijama, detaljnim pregledom proizvoda, newsletterom i zapisom podataka narudžbe",
                
                        "topLink" : "Početak",
                        "aboutLink" : "O meni",
@@ -433,6 +471,8 @@
                
                document.getElementById("vila-naslov").innerText = hrvatski.vilaNaslov;
                document.getElementById("vila-opis").innerText = hrvatski.vilaOpis;
+               document.getElementById("knjizara-naslov").innerText = hrvatski.knjizaraNaslov;
+               document.getElementById("knjizara-opis").innerText = hrvatski.knjizaraOpis;
 
                document.getElementById("kontakt-naslov").innerText = hrvatski.kontaktNaslov;
 
@@ -448,6 +488,7 @@
                document.getElementById("str6").innerText = hrvatski.buttonStranica;
                document.getElementById("str7").innerText = hrvatski.buttonStranica;
                document.getElementById("str8").innerText = hrvatski.buttonStranica;
+               document.getElementById("str9").innerText = hrvatski.buttonStranica;
                };
 
   </script>
