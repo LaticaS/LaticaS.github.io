@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Trokut, ekipa 2023./2024.</title>
+    <style>
+      body {
+        background-color: lemonchiffon;
+      }
+      .div-container {
+        width: 100%;
+        height: 90vh;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      h2 {
+        font-family: Arial, Helvetica, sans-serif;
+        padding: 0.5rem;
+        text-shadow: 1px 2px 1px grey;
+      }
+
+      .div-img {
+        width: 70vw;
+        height: 90vh;
+        position: relative;
+        background-image: url(./images/zajednička\ fotka\ Trokut\ 2023-2024..jpg);
+        background-repeat: no-repeat;
+        background-size: contain;
+      }
+
+      .div-img span:first-of-type {
+        height: 100%;
+        width: 100%;
+        background: transparent;
+        border-radius: 5%;
+        position: absolute;
+        left: 1vw;
+        bottom: 1vh;
+        z-index: 1;
+        cursor: pointer;
+      }
+
+      span:hover:after {
+        content: attr(data-title);
+        background: rgba(0, 0, 0, 0.4);
+        color: #fff;
+        font-size: 0.9rem;
+        font-family: Arial, Helvetica, sans-serif;
+        width: 59vw;
+        bottom: 1rem;
+        padding: 10px;
+        position: absolute;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Trokut NEET 4.0 Academy 2023./'24, team Full Stack Developer</h2>
+    <div class="div-container">
+      <div class="div-img">
+        <span
+          data-title="This is our team (left to right):  Zadnji red -> Marko Junaković, Nicol Budimir, Bojan Brkić, Bruno Orlandini, Anamaria Živković, Anja Donđivić, Tomislav Pilipac, Ante Sušić, Mario Grubišić;
+      Šesti red -> Mislav Pavičić, Alen Cezar Hadžić, Stjepan Goreta;
+      Peti red -> Nikola Jelić, Franko Gović, Isak Murtezani;
+      Četvrti red -> Josip Marasović, Ivan Adamić-Flinta, Vjekoslav Papić, Filip Znaor, Marko Bolanča, Martin Bolanča;
+      Treći red -> Diana Mudrinić (CEO), Ivan Šoda (Assistant to director for IT and education);
+      Drugi red -> Domagoj Prpić, Antonio Milinović;
+      Prvi red -> Anđelo Jakoliš, Josip Sudar, Matija Bilić, Matej Hanzlić (prof.), Latica Škubonja;"
+        ></span>
+      </div>
+    </div>
+  </body>
+</html>
